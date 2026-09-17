@@ -67,10 +67,14 @@ function checkSyntaxLocally(query: string, calculusType: CalculusType): { valid:
       errors.push({ message: `Mismatched parentheses: ${openParens} opening, ${closeParens} closing.` });
     }
 
-    const openBrackets = (q.match(/</g) || []).length;
-    const closeBrackets = (q.match(/>/g) || []).length;
-    if (openBrackets !== closeBrackets) {
-      errors.push({ message: `Mismatched angle brackets: ${openBrackets} opening, ${closeBrackets} closing.` });
+    const pipeIdx = inner.indexOf('|');
+    if (pipeIdx >= 0) {
+      const varPart = inner.slice(0, pipeIdx);
+      const openBrackets = (varPart.match(/</g) || []).length;
+      const closeBrackets = (varPart.match(/>/g) || []).length;
+      if (openBrackets !== closeBrackets) {
+        errors.push({ message: `Mismatched angle brackets in domain variables: ${openBrackets} opening, ${closeBrackets} closing.` });
+      }
     }
 
     const badOperators = cond.match(/[∧∨¬→↔∃∀]/g);
