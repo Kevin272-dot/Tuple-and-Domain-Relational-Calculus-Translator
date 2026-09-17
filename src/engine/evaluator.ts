@@ -1,5 +1,5 @@
 import { ASTNode, QueryNode } from './types';
-import { SAMPLE_DATABASE_SCHEMA } from './constants';
+import { UserTable } from '../context/AppContext';
 
 export interface DatabaseTable {
   name: string;
@@ -15,20 +15,20 @@ export interface EvaluationResult {
   error?: string;
 }
 
-function buildDatabase(): Map<string, DatabaseTable> {
+function buildDatabase(tables: UserTable[]): Map<string, DatabaseTable> {
   const db = new Map<string, DatabaseTable>();
-  for (const [name, schema] of Object.entries(SAMPLE_DATABASE_SCHEMA)) {
-    db.set(name, {
-      name,
-      columns: [...schema.columns],
-      rows: schema.sampleData.map(row => [...row]),
+  for (const t of tables) {
+    db.set(t.name, {
+      name: t.name,
+      columns: [...t.columns],
+      rows: t.rows.map(r => [...r]),
     });
   }
   return db;
 }
 
 function getTable(db: Map<string, DatabaseTable>, name: string): DatabaseTable | undefined {
-  return db.get(name);
+  return db.get(name) || db.get(name.toLowerCase()) || db.get(name.toUpperCase());
 }
 
 function compareValues(
@@ -147,8 +147,8 @@ function evaluateQuantifier(
   return true;
 }
 
-export function evaluateQuery(ast: QueryNode): EvaluationResult {
-  const db = buildDatabase();
+export function evaluateQuery(ast: QueryNode, tables: UserTable[]): EvaluationResult {
+  const db = buildDatabase(tables);
 
   let mainRelation = '';
   function findRelation(n: ASTNode): string {
@@ -180,12 +180,13 @@ export function evaluateQuery(ast: QueryNode): EvaluationResult {
 
   const table = getTable(db, mainRelation);
   if (!table) {
+    const available = [...db.keys()].join(', ');
     return {
       success: false,
       columns: [],
       rows: [],
       rowCount: 0,
-      error: `Table "${mainRelation}" not found in sample database.`,
+      error: `Table "${mainRelation}" not found. Available tables: ${available || 'none'}. Define your schema in the Schema tab.`,
     };
   }
 
