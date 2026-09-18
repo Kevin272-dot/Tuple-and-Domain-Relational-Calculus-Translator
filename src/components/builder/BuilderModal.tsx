@@ -20,12 +20,12 @@ export function BuilderModal() {
             alt="Kevin Daniel"
             className="w-24 h-24 mx-auto mb-4 rounded-full object-cover shadow-lg ring-2 ring-primary-200 dark:ring-primary-800"
           />
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-            Kevin Daniel
-          </h3>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">
             Developed by
           </p>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+            Kevin Daniel
+          </h3>
           <div className="inline-flex items-center gap-1 px-3 py-1 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">
             Register Number: 25BCE1823
           </div>
