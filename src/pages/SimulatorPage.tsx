@@ -42,7 +42,7 @@ export function SimulatorPage() {
     { id: 'translate', label: 'Translate', icon: <Calculator size={16} /> },
     { id: 'tree', label: 'Predicate Tree', icon: <GitBranch size={16} /> },
     { id: 'equivalence', label: 'Equivalence', icon: <Scale size={16} /> },
-    { id: 'generate', label: 'AI Generator', icon: <Wand2 size={16} /> },
+    { id: 'generate', label: 'NL Pipeline', icon: <Wand2 size={16} /> },
     { id: 'schema', label: 'Schema', icon: <Database size={16} /> },
   ];
 

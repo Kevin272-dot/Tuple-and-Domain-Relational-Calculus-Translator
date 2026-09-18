@@ -5,13 +5,15 @@ import { ChallengeMode } from '../components/practice/ChallengeMode';
 import { ExerciseList } from '../components/practice/ExerciseList';
 import { ScoreTracker } from '../components/practice/ScoreTracker';
 import { SpacedRepetition } from '../components/advanced/SpacedRepetition';
-import { Target, Zap, BookOpen, Trophy, Brain } from 'lucide-react';
+import { CompetitiveExam } from '../components/practice/CompetitiveExam';
+import { Target, Zap, BookOpen, Trophy, Brain, Building2 } from 'lucide-react';
 
 export function PracticePage() {
   const [activeTab, setActiveTab] = useState('quiz');
 
   const tabs = [
     { id: 'quiz', label: 'Quiz', icon: <Target size={16} /> },
+    { id: 'competitive', label: 'Exam Prep', icon: <Building2 size={16} /> },
     { id: 'challenge', label: 'Challenge', icon: <Zap size={16} /> },
     { id: 'exercises', label: 'Exercises', icon: <BookOpen size={16} /> },
     { id: 'scores', label: 'Scores', icon: <Trophy size={16} /> },
@@ -25,7 +27,7 @@ export function PracticePage() {
           Practice &amp; Assess
         </h1>
         <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
-          Test your understanding of TRC and DRC with quizzes, challenges, exercises, and spaced repetition review.
+          Test your understanding of TRC and DRC with quizzes, competitive exam practice, challenges, exercises, and spaced repetition review.
         </p>
       </div>
 
@@ -33,6 +35,7 @@ export function PracticePage() {
 
       <div className="animate-fade-in">
         {activeTab === 'quiz' && <QuizMode />}
+        {activeTab === 'competitive' && <CompetitiveExam />}
         {activeTab === 'challenge' && <ChallengeMode />}
         {activeTab === 'exercises' && <ExerciseList />}
         {activeTab === 'scores' && <ScoreTracker />}

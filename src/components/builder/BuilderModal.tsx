@@ -1,5 +1,5 @@
 import { Modal } from '../ui/Modal';
-import { User, Mail, GraduationCap, BookOpen } from 'lucide-react';
+import { Mail, BookOpen } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export function BuilderModal() {
@@ -9,20 +9,22 @@ export function BuilderModal() {
     <Modal
       isOpen={isBuilderOpen}
       onClose={() => setBuilderOpen(false)}
-      title="About the Developer"
+      title="About"
       size="lg"
     >
       <div className="space-y-6">
         {/* Developer Section */}
         <div className="text-center">
-          <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center shadow-lg">
-            <User size={40} className="text-white" />
-          </div>
+          <img
+            src="/images/developer.jpeg"
+            alt="Kevin Daniel"
+            className="w-24 h-24 mx-auto mb-4 rounded-full object-cover shadow-lg ring-2 ring-primary-200 dark:ring-primary-800"
+          />
           <h3 className="text-xl font-bold text-slate-900 dark:text-white">
             Kevin Daniel
           </h3>
           <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">
-            Developer
+            Developed by
           </p>
           <div className="inline-flex items-center gap-1 px-3 py-1 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">
             Register Number: 25BCE1823
@@ -52,9 +54,11 @@ export function BuilderModal() {
 
         {/* Mentor Section */}
         <div className="text-center">
-          <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-violet-400 to-violet-600 rounded-full flex items-center justify-center shadow-lg">
-            <GraduationCap size={40} className="text-white" />
-          </div>
+          <img
+            src="/images/mentor.png"
+            alt="Dr. Swaminathan A"
+            className="w-24 h-24 mx-auto mb-4 rounded-full object-cover shadow-lg ring-2 ring-violet-200 dark:ring-violet-800"
+          />
           <h3 className="text-xl font-bold text-slate-900 dark:text-white">
             Dr. Swaminathan A
           </h3>
