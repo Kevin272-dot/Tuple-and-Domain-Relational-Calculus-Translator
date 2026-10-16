@@ -1,9 +1,10 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { Timer, Trophy, RotateCcw, Zap, CheckCircle, XCircle, ArrowRight } from 'lucide-react';
 import { translateToSQL } from '../../engine/translator';
 import { sampleQueries } from '../../engine/examples';
+import { track } from '../../utils/achievementStore';
 
 interface Challenge {
   query: string;
@@ -25,6 +26,15 @@ export function ChallengeMode() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerActive, setTimerActive] = useState(false);
   const [difficulty, setDifficulty] = useState<'mixed' | 'basic' | 'intermediate' | 'advanced'>('mixed');
+  const trackedRef = useRef(false);
+
+  useEffect(() => {
+    if (phase === 'results' && challenges.length > 0 && !trackedRef.current) {
+      trackedRef.current = true;
+      track('challenge');
+    }
+    if (phase !== 'results') trackedRef.current = false;
+  }, [phase, challenges.length]);
 
   const startChallenge = useCallback((diff: typeof difficulty) => {
     setDifficulty(diff);

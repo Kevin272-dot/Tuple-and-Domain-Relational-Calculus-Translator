@@ -84,26 +84,36 @@ export const COMMON_MISTAKES = [
     mistake: 'Using ∧ instead of AND',
     correction: 'Use the text keyword "and" instead of the Unicode symbol "∧"',
     explanation: 'While the tokenizer supports Unicode symbols, text keywords are easier to type and more readable.',
+    wrongQuery: '{T | T ∈ Students ∧ T.age > 20}',
+    correctQuery: '{T | T in Students and T.age > 20}',
   },
   {
     mistake: 'Missing "in" operator for relation membership',
     correction: 'Add "in RelationName" after the tuple variable',
     explanation: 'TRC requires explicit relation membership. Example: {T | T in Students AND T.age > 20}',
+    wrongQuery: '{T | Students and T.age > 20}',
+    correctQuery: '{T | T in Students and T.age > 20}',
   },
   {
     mistake: 'Using SELECT * for projected attributes',
     correction: 'Use the attribute name: {T.name | ...} translates to SELECT name',
     explanation: 'The variable before the pipe determines which columns appear in the result.',
+    wrongQuery: '{T | T in Students and T.dept = "CS"}',
+    correctQuery: '{T.name | T in Students and T.dept = "CS"}',
   },
   {
     mistake: 'Forgetting parentheses around quantifier expressions',
     correction: 'Quantifiers need parentheses: exists E(...)',
     explanation: '∃E(...) and ∀E(...) require parentheses around the scoped expression.',
+    wrongQuery: "{T.name | T in Students and exists E E.course = 'DBMS'}",
+    correctQuery: "{T.name | T in Students and exists E(E in Enrollment and E.student = T.name and E.course = 'DBMS')}",
   },
   {
     mistake: 'Using = for implication',
     correction: 'Use "implies" or →: P implies Q',
-    explanation: 'Implication (→) is translated as NOT P OR Q in SQL.',
+    explanation: 'Implication (→) is translated as NOT P OR Q in SQL. Using "=" changes the meaning entirely.',
+    wrongQuery: "{T.name | forall E(E in Enrollment and T.name = E.student and E.grade = 'A')}",
+    correctQuery: "{T.name | forall E(E in Enrollment implies T.name = E.student → E.grade = 'A')}",
   },
 ] as const;
 

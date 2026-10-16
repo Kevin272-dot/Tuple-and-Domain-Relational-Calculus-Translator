@@ -76,7 +76,7 @@ export function AiChat({ currentQuery }: AiChatProps) {
 
       if (!response.ok) throw new Error(`API error: ${response.status}`);
 
-      const data = await response.json();
+      const data = (await response.json()) as { choices: { message?: { content?: string } }[] };
       const reply = data.choices[0]?.message?.content || 'No response generated.';
       setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
     } catch (err) {

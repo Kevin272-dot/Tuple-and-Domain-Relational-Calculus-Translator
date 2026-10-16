@@ -6,7 +6,8 @@ import { ExerciseList } from '../components/practice/ExerciseList';
 import { ScoreTracker } from '../components/practice/ScoreTracker';
 import { SpacedRepetition } from '../components/advanced/SpacedRepetition';
 import { CompetitiveExam } from '../components/practice/CompetitiveExam';
-import { Target, Zap, BookOpen, Trophy, Brain, Building2 } from 'lucide-react';
+import { Achievements } from '../components/practice/Achievements';
+import { Target, Zap, BookOpen, Trophy, Brain, Building2, Award } from 'lucide-react';
 
 export function PracticePage() {
   const [activeTab, setActiveTab] = useState('quiz');
@@ -17,6 +18,7 @@ export function PracticePage() {
     { id: 'challenge', label: 'Challenge', icon: <Zap size={16} /> },
     { id: 'exercises', label: 'Exercises', icon: <BookOpen size={16} /> },
     { id: 'scores', label: 'Scores', icon: <Trophy size={16} /> },
+    { id: 'rewards', label: 'Rewards', icon: <Award size={16} /> },
     { id: 'review', label: 'Review', icon: <Brain size={16} /> },
   ];
 
@@ -39,6 +41,7 @@ export function PracticePage() {
         {activeTab === 'challenge' && <ChallengeMode />}
         {activeTab === 'exercises' && <ExerciseList />}
         {activeTab === 'scores' && <ScoreTracker />}
+        {activeTab === 'rewards' && <Achievements />}
         {activeTab === 'review' && <SpacedRepetition />}
       </div>
     </div>

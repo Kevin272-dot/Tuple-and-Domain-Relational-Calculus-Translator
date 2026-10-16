@@ -13,6 +13,7 @@ import { parseQuery } from '../../engine/parser';
 import { translateToSQL } from '../../engine/translator';
 import { generatePredicateTree } from '../../engine/helpers';
 import { Token, ASTNode, TranslationResult } from '../../engine/types';
+import { track } from '../../utils/achievementStore';
 
 interface PipelineStage {
   id: string;
@@ -124,7 +125,7 @@ Return ONLY the query, no explanation.`,
       });
 
       if (!response.ok) throw new Error(`API returned ${response.status}`);
-      const data = await response.json();
+      const data = (await response.json()) as { choices: { message?: { content?: string } }[] };
       query = data.choices[0]?.message?.content?.trim() || '';
       if (!query) throw new Error('No query generated.');
 
@@ -210,6 +211,7 @@ Return ONLY the query, no explanation.`,
           s
         ));
         setPipelineComplete(true);
+        track('pipeline');
       } else {
         setPipelineStages(prev => prev.map(s =>
           s.id === 'translate' ? { ...s, status: 'error', output: result.error || 'Translation failed' } : s

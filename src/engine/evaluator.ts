@@ -15,7 +15,7 @@ export interface EvaluationResult {
   error?: string;
 }
 
-function buildDatabase(tables: UserTable[]): Map<string, DatabaseTable> {
+export function buildDatabase(tables: UserTable[]): Map<string, DatabaseTable> {
   const db = new Map<string, DatabaseTable>();
   for (const t of tables) {
     db.set(t.name, {
@@ -47,7 +47,7 @@ function compareValues(
   }
 }
 
-function evaluateCondition(
+export function evaluateCondition(
   node: ASTNode,
   row: (string | number)[],
   columns: string[],

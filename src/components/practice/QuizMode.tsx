@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useCallback } from 'react';
+import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
 import {
@@ -6,6 +6,7 @@ import {
   Settings, Filter, Play, Pause, Shuffle, Hash
 } from 'lucide-react';
 import { mcqBank, MCQQuestion } from '../../engine/mcqBank';
+import { track } from '../../utils/achievementStore';
 
 type QuizFilter = 'all' | 'TRC' | 'DRC' | 'General';
 type QuizSize = 10 | 20 | 30 | 50 | 100;
@@ -39,6 +40,16 @@ export function QuizMode() {
   const [answers, setAnswers] = useState<(number | null)[]>([]);
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerActive, setTimerActive] = useState(false);
+  const trackedRef = useRef(false);
+
+  useEffect(() => {
+    if (phase === 'review' && questions.length > 0 && !trackedRef.current) {
+      trackedRef.current = true;
+      track('quiz');
+      if (score === questions.length) track('perfect-quiz');
+    }
+    if (phase !== 'review') trackedRef.current = false;
+  }, [phase, questions.length, score]);
 
   const startQuiz = useCallback((cfg: QuizConfig) => {
     setConfig(cfg);

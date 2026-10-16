@@ -1,10 +1,14 @@
-import { useState } from 'react';
-import { Play, RotateCcw, Copy, Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { Play, RotateCcw, Copy, Check, ChevronDown, ChevronUp, Share2, AlertCircle, CheckCircle } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Card } from '../ui/Card';
+import { HighlightedEditor } from '../ui/HighlightedEditor';
 import { translateToSQL } from '../../engine/translator';
+import { tokenize } from '../../engine/tokenizer';
+import { Parser, ParseError } from '../../engine/parser';
 import { TranslationResult, TranslationStep, CalculusType } from '../../engine/types';
 import { useApp } from '../../context/AppContext';
+import { track } from '../../utils/achievementStore';
 
 interface QueryInputProps {
   onResult?: (result: TranslationResult | null) => void;
@@ -19,7 +23,24 @@ export function QueryInput({ onResult, externalQuery, onQueryChange }: QueryInpu
   const setQuery = onQueryChange || setInternalQuery;
   const [result, setResult] = useState<TranslationResult | null>(null);
   const [copied, setCopied] = useState(false);
+  const [shared, setShared] = useState(false);
   const [showSteps, setShowSteps] = useState(true);
+
+  const liveSyntax = useMemo(() => {
+    const q = query.trim();
+    if (!q) return { state: 'empty' as const, message: '' };
+    try {
+      new Parser(tokenize(q)).parse();
+      return { state: 'valid' as const, message: 'Valid syntax' };
+    } catch (e) {
+      const msg = e instanceof ParseError
+        ? `Line ${e.line}, column ${e.column}: ${e.message}`
+        : e instanceof Error
+        ? e.message
+        : 'Parse error';
+      return { state: 'invalid' as const, message: msg };
+    }
+  }, [query]);
 
   const handleTranslate = () => {
     if (!query.trim()) return;
@@ -28,6 +49,7 @@ export function QueryInput({ onResult, externalQuery, onQueryChange }: QueryInpu
     onResult?.(translationResult);
 
     if (translationResult.success) {
+      track('translation');
       addToHistory({
         id: Date.now().toString(),
         timestamp: Date.now(),
@@ -37,6 +59,15 @@ export function QueryInput({ onResult, externalQuery, onQueryChange }: QueryInpu
         steps: translationResult.steps,
       });
     }
+  };
+
+  const handleShare = () => {
+    if (!query.trim()) return;
+    const url = `${window.location.origin}${window.location.pathname}?q=${encodeURIComponent(query)}&type=${selectedCalculus}`;
+    navigator.clipboard.writeText(url).then(() => {
+      setShared(true);
+      setTimeout(() => setShared(false), 2000);
+    }).catch(() => { /* clipboard unavailable */ });
   };
 
   const handleCopy = () => {
@@ -86,25 +117,39 @@ export function QueryInput({ onResult, externalQuery, onQueryChange }: QueryInpu
       </div>
 
       <div className="relative">
-        <textarea
+        <HighlightedEditor
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={setQuery}
           placeholder={
             selectedCalculus === 'TRC'
               ? "{T | T in Students AND T.age > 20}"
               : "{<name, age> | <name, age, dept> in Students AND dept = 'CS'}"
           }
-          className="w-full h-32 p-4 font-mono text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none transition-all duration-200"
+          className="w-full h-32"
+          ariaLabel="TRC or DRC query input"
           onKeyDown={(e) => {
             if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
               handleTranslate();
             }
           }}
         />
-        <div className="absolute bottom-3 right-3 text-xs text-slate-400 dark:text-slate-500">
+        <div className="absolute bottom-3 right-3 text-xs text-slate-400 dark:text-slate-500 pointer-events-none z-10">
           Ctrl+Enter to translate
         </div>
       </div>
+
+      {liveSyntax.state !== 'empty' && (
+        <div
+          className={`flex items-center gap-2 text-xs px-3 py-1.5 rounded-lg ${
+            liveSyntax.state === 'valid'
+              ? 'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400'
+              : 'bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400'
+          }`}
+        >
+          {liveSyntax.state === 'valid' ? <CheckCircle size={12} /> : <AlertCircle size={12} />}
+          {liveSyntax.message}
+        </div>
+      )}
 
       <p className="text-xs text-slate-400 dark:text-slate-500">
         You can type text instead of symbols: <code className="font-mono">in</code> or <code className="font-mono">e</code> for ∈, <code className="font-mono">and</code> for ∧, <code className="font-mono">or</code> for ∨, <code className="font-mono">not</code> for ¬, <code className="font-mono">exists</code> for ∃, <code className="font-mono">forall</code> for ∀, <code className="font-mono">implies</code> for →.
@@ -118,6 +163,10 @@ export function QueryInput({ onResult, externalQuery, onQueryChange }: QueryInpu
         <Button variant="secondary" onClick={handleClear}>
           <RotateCcw size={16} className="mr-2" />
           Clear
+        </Button>
+        <Button variant="secondary" onClick={handleShare} disabled={!query.trim()}>
+          {shared ? <Check size={16} className="mr-2" /> : <Share2 size={16} className="mr-2" />}
+          {shared ? 'Link copied' : 'Share'}
         </Button>
       </div>
 

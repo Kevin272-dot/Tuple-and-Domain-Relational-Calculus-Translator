@@ -76,7 +76,7 @@ WHY: (short explanation)`,
         throw new Error(`API returned ${response.status}`);
       }
 
-      const data = await response.json();
+      const data = (await response.json()) as { choices: { message?: { content?: string } }[] };
       setCorrection(data.choices[0]?.message?.content || 'No correction generated.');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong.');

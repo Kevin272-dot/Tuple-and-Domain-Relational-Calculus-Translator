@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useCallback } from 'react';
+import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
 import {
@@ -8,6 +8,7 @@ import {
   CheckCircle, XCircle, RotateCcw, Trophy, ChevronRight, Clock,
   Settings, Filter, Play, Pause, Shuffle, Award, BookOpen, Building2
 } from 'lucide-react';
+import { track } from '../../utils/achievementStore';
 
 type ExamFilter = 'all' | 'GATE' | 'UGC NET' | 'ISRO' | 'BARC' | 'IES';
 type TopicFilter = 'all' | 'TRC' | 'DRC' | 'Relational Algebra' | 'SQL' | 'General';
@@ -61,6 +62,15 @@ export function CompetitiveExam() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerActive, setTimerActive] = useState(false);
   const [showSolutions, setShowSolutions] = useState(false);
+  const trackedRef = useRef(false);
+
+  useEffect(() => {
+    if (phase === 'review' && questions.length > 0 && !trackedRef.current) {
+      trackedRef.current = true;
+      track('exam');
+    }
+    if (phase !== 'review') trackedRef.current = false;
+  }, [phase, questions.length]);
 
   const availableCounts = useMemo(() => {
     const counts: Record<string, number> = { all: competitiveQuestionBank.length };

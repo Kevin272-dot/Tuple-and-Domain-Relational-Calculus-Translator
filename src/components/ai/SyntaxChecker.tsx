@@ -180,7 +180,7 @@ TIP: (brief helpful tip)`,
       });
 
       if (!response.ok) throw new Error(`API returned ${response.status}`);
-      const data = await response.json();
+      const data = (await response.json()) as { choices: { message?: { content?: string } }[] };
       setAiResult(data.choices[0]?.message?.content || 'No response generated.');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Try again.');

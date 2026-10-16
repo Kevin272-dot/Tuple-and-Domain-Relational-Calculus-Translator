@@ -23,6 +23,8 @@ interface AppContextType {
   setSimulatorMode: (mode: SimulatorMode) => void;
   userSchema: UserTable[];
   setUserSchema: (tables: UserTable[]) => void;
+  sharedQuery: string;
+  setSharedQuery: (q: string) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -52,6 +54,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
       return DEFAULT_SCHEMA;
     }
   });
+
+  const [sharedQuery, setSharedQuery] = useState('');
 
   const handleSetUserSchema = (tables: UserTable[]) => {
     setUserSchema(tables);
@@ -96,6 +100,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
         setSimulatorMode,
         userSchema,
         setUserSchema: handleSetUserSchema,
+        sharedQuery,
+        setSharedQuery,
       }}
     >
       {children}

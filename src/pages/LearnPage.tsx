@@ -3,13 +3,17 @@ import { Tabs } from '../components/ui/Tabs';
 import { ConceptExplanation } from '../components/learn/ConceptExplanation';
 import { AnimatedVideo } from '../components/learn/AnimatedVideo';
 import { References } from '../components/learn/References';
-import { BookOpen, Video, BookMarked } from 'lucide-react';
+import { GuidedTutorial } from '../components/tutorial/GuidedTutorial';
+import { CommonMistakes } from '../components/learn/CommonMistakes';
+import { BookOpen, Video, BookMarked, GraduationCap, AlertTriangle } from 'lucide-react';
 
 export function LearnPage() {
   const [activeTab, setActiveTab] = useState('concepts');
 
   const tabs = [
     { id: 'concepts', label: 'Concepts', icon: <BookOpen size={16} /> },
+    { id: 'tutorial', label: 'Guided Tutorial', icon: <GraduationCap size={16} /> },
+    { id: 'mistakes', label: 'Mistakes', icon: <AlertTriangle size={16} /> },
     { id: 'video', label: 'Video', icon: <Video size={16} /> },
     { id: 'references', label: 'References', icon: <BookMarked size={16} /> },
   ];
@@ -30,6 +34,8 @@ export function LearnPage() {
 
       <div className="animate-fade-in">
         {activeTab === 'concepts' && <ConceptExplanation />}
+        {activeTab === 'tutorial' && <GuidedTutorial />}
+        {activeTab === 'mistakes' && <CommonMistakes />}
         {activeTab === 'video' && <AnimatedVideo />}
         {activeTab === 'references' && <References />}
       </div>

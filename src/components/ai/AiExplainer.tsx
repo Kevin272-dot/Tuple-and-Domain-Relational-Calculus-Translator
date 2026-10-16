@@ -75,11 +75,11 @@ Keep it under 200 words. Use short sentences. Be direct.`,
       });
 
       if (!response.ok) {
-        const errData = await response.json().catch(() => null);
+        const errData = (await response.json().catch(() => null)) as { error?: { message?: string } } | null;
         throw new Error(errData?.error?.message || `API returned ${response.status}`);
       }
 
-      const data = await response.json();
+      const data = (await response.json()) as { choices: { message?: { content?: string } }[] };
       setExplanation(data.choices[0]?.message?.content || 'No explanation generated.');
     } catch (err) {
       if (err instanceof Error) {

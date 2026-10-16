@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { QueryInput } from '../components/simulator/QueryInput';
 import { SampleQueries } from '../components/simulator/SampleQueries';
 import { OperatorReference } from '../components/simulator/OperatorReference';
@@ -14,17 +14,39 @@ import { PredicateTree } from '../components/advanced/PredicateTree';
 import { AiQueryGenerator } from '../components/advanced/AiQueryGenerator';
 import { UserSchemaEditor } from '../components/simulator/UserSchemaEditor';
 import { ExecutePanel } from '../components/simulator/ExecutePanel';
+import { MultiView } from '../components/simulator/MultiView';
+import { SqlToCalculus } from '../components/simulator/SqlToCalculus';
+import { TupleEvaluator } from '../components/simulator/TupleEvaluator';
 import { Card } from '../components/ui/Card';
 import { Tabs } from '../components/ui/Tabs';
 import { TranslationResult, CalculusType } from '../engine/types';
 import { useApp } from '../context/AppContext';
-import { Calculator, GitBranch, Scale, Wand2, Database, Play, BookOpen } from 'lucide-react';
+import { Calculator, GitBranch, Scale, Wand2, Database, Play, BookOpen, Layers, Undo2, ListChecks } from 'lucide-react';
 
 export function SimulatorPage() {
-  const { selectedCalculus, simulatorMode, setSimulatorMode } = useApp();
+  const { selectedCalculus, setSelectedCalculus, simulatorMode, setSimulatorMode, sharedQuery, setSharedQuery } = useApp();
   const [result, setResult] = useState<TranslationResult | null>(null);
   const [query, setQuery] = useState('');
   const [activeSubTab, setActiveSubTab] = useState('translate');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q');
+    const type = params.get('type');
+    if (q) {
+      setQuery(q);
+      if (type === 'DRC' || type === 'TRC') setSelectedCalculus(type);
+    }
+  }, [setSelectedCalculus]);
+
+  useEffect(() => {
+    if (sharedQuery) {
+      setQuery(sharedQuery);
+      setSimulatorMode('translate');
+      setActiveSubTab('translate');
+      setSharedQuery('');
+    }
+  }, [sharedQuery, setSharedQuery, setSimulatorMode]);
 
   const handleResult = (r: TranslationResult | null) => {
     setResult(r);
@@ -40,6 +62,8 @@ export function SimulatorPage() {
 
   const translateTabs = [
     { id: 'translate', label: 'Translate', icon: <Calculator size={16} /> },
+    { id: 'multiview', label: 'Multi-View', icon: <Layers size={16} /> },
+    { id: 'reverse', label: 'SQL to Calculus', icon: <Undo2 size={16} /> },
     { id: 'tree', label: 'Predicate Tree', icon: <GitBranch size={16} /> },
     { id: 'equivalence', label: 'Equivalence', icon: <Scale size={16} /> },
     { id: 'generate', label: 'NL Pipeline', icon: <Wand2 size={16} /> },
@@ -49,6 +73,7 @@ export function SimulatorPage() {
   const executeTabs = [
     { id: 'schema', label: 'Define Schema', icon: <Database size={16} /> },
     { id: 'execute', label: 'Run Query', icon: <Play size={16} /> },
+    { id: 'trace', label: 'Tuple Trace', icon: <ListChecks size={16} /> },
   ];
 
   const currentTabs = simulatorMode === 'translate' ? translateTabs : executeTabs;
@@ -111,6 +136,18 @@ export function SimulatorPage() {
           </div>
         )}
 
+        {simulatorMode === 'translate' && activeSubTab === 'multiview' && (
+          <div className="animate-fade-in">
+            <MultiView />
+          </div>
+        )}
+
+        {simulatorMode === 'translate' && activeSubTab === 'reverse' && (
+          <div className="animate-fade-in">
+            <SqlToCalculus />
+          </div>
+        )}
+
         {simulatorMode === 'translate' && activeSubTab === 'tree' && (
           <div className="animate-fade-in">
             <PredicateTree />
@@ -144,6 +181,12 @@ export function SimulatorPage() {
         {simulatorMode === 'execute' && activeSubTab === 'execute' && (
           <div className="animate-fade-in">
             <ExecutePanel />
+          </div>
+        )}
+
+        {simulatorMode === 'execute' && activeSubTab === 'trace' && (
+          <div className="animate-fade-in">
+            <TupleEvaluator />
           </div>
         )}
       </div>
