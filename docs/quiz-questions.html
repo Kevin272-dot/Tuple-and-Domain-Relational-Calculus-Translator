@@ -1,0 +1,1842 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quiz Question Bank (Non-Competitive-Exam Questions)</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Inter", Arial, sans-serif;
+    color: #000000;
+    background: #ffffff;
+    line-height: 1.55;
+    font-size: 14px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 36px 28px 64px; }
+  h1, h2, h3, h4, p, li, td, th, span, div, strong, em { color: #000000; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.2px; }
+  h2 { font-size: 19px; margin: 34px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #000; }
+  h3 { font-size: 15px; margin: 22px 0 8px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .subtitle { font-size: 13px; margin: 0 0 18px; }
+  .rule { height: 3px; background: #000; margin: 14px 0 22px; border: 0; }
+  .meta-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 4px; }
+  .meta-box { border: 1px solid #000; border-radius: 6px; padding: 8px 14px; min-width: 130px; }
+  .meta-box .k { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; display: block; }
+  .meta-box .v { font-size: 18px; font-weight: 700; }
+  table.summary { width: 100%; border-collapse: collapse; margin: 10px 0 6px; font-size: 13px; }
+  table.summary th, table.summary td { border: 1px solid #000; padding: 6px 10px; text-align: left; }
+  table.summary th { background: #f0f0f0; font-weight: 700; }
+  .card { border: 1px solid #cfcfcf; border-radius: 8px; padding: 14px 18px 16px; margin: 16px 0; page-break-inside: avoid; break-inside: avoid; }
+  .card-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .qnum { font-weight: 700; font-size: 15px; }
+  .badge { border: 1px solid #000; border-radius: 4px; padding: 1px 7px; font-size: 10.5px; letter-spacing: 0.4px; text-transform: uppercase; white-space: nowrap; }
+  .badge.solid { background: #000; color: #ffffff !important; }
+  .badge.solid * { color: #ffffff !important; }
+  .badge.id { font-family: "Consolas", "Courier New", monospace; text-transform: none; letter-spacing: 0; }
+  .spacer { flex: 1; }
+  .qtext { white-space: pre-wrap; margin: 6px 0 10px; font-size: 14.5px; }
+  .options { list-style: none; margin: 0; padding: 0; }
+  .opt { border: 1px solid #e2e2e2; border-radius: 6px; padding: 6px 10px; margin: 6px 0; display: flex; gap: 10px; page-break-inside: avoid; }
+  .opt .lt { font-weight: 700; min-width: 20px; }
+  .opt.correct { border: 2px solid #000; background: #f3f3f3; font-weight: 600; }
+  .opt .tick { margin-left: auto; font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 700; }
+  .answer-line { margin-top: 10px; font-weight: 700; }
+  .expl { margin-top: 8px; padding: 9px 12px; border-left: 3px solid #000; background: #f6f6f6; page-break-inside: avoid; }
+  .expl .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; display: block; margin-bottom: 2px; }
+  .note { border: 1px dashed #000; border-radius: 6px; padding: 10px 14px; margin: 18px 0; font-size: 13px; }
+  .foot { margin-top: 40px; padding-top: 12px; border-top: 1px solid #000; font-size: 11.5px; }
+  .toc { margin: 8px 0 0; padding-left: 18px; }
+  .toc li { margin: 3px 0; }
+  @media print {
+    .wrap { max-width: none; padding: 0; }
+    .card { page-break-inside: avoid; }
+    @page { size: A4; margin: 14mm; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Quiz Question Bank</h1>
+<p class="subtitle">All quiz-bank questions that are <strong>not</strong> part of the competitive-exam question set.</p>
+<hr class="rule" />
+<div class="meta-grid">
+  <div class="meta-box"><span class="k">Questions</span><span class="v">96</span></div>
+  <div class="meta-box"><span class="k">Quiz bank total</span><span class="v">100</span></div>
+  <div class="meta-box"><span class="k">Excluded (in exam)</span><span class="v">4</span></div>
+  <div class="meta-box"><span class="k">Competitive total</span><span class="v">55</span></div>
+</div>
+<div class="note">
+  <strong>Scope.</strong> Source: <code>src/engine/mcqBank.ts</code> (the bank used by Quiz Mode).
+  A question is excluded from this document when its text also appears in the competitive-exam bank
+  (<code>src/engine/gateQuestionBank.ts</code>). 4 duplicate question(s) were excluded.
+</div>
+<h3>Contents</h3>
+<ol class="toc">
+  <li>TRC Questions (39)</li>
+  <li>DRC Questions (34)</li>
+  <li>General Questions (23)</li>
+</ol>
+<h3>Summary by type</h3>
+
+<table class="summary">
+  <thead><tr><th>Calculus type</th><th>Questions</th></tr></thead>
+  <tbody>
+    <tr><td>TRC</td><td>39</td></tr>
+    <tr><td>DRC</td><td>34</td></tr>
+    <tr><td>General</td><td>23</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>96</strong></td></tr>
+  </tbody>
+</table>
+<h3>Summary by difficulty</h3>
+
+<table class="summary">
+  <thead><tr><th>Difficulty</th><th>Questions</th></tr></thead>
+  <tbody>
+    <tr><td>basic</td><td>32</td></tr>
+    <tr><td>intermediate</td><td>34</td></tr>
+    <tr><td>advanced</td><td>30</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>96</strong></td></tr>
+  </tbody>
+</table>
+<h2>TRC Questions &mdash; 39</h2>
+<p class="subtitle">Basic: 14 &nbsp;|&nbsp; Intermediate: 13 &nbsp;|&nbsp; Advanced: 12</p>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q1.</span>
+    <span class="badge id">trc-b-002</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: projection</span>
+  </div>
+  <div class="qtext">Which SQL query is equivalent to {T.name | T in Students}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>SELECT * FROM Students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>SELECT name FROM Students</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT DISTINCT name FROM Students</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT T.name FROM Students AS T</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) SELECT name FROM Students</div>
+  <div class="expl"><span class="lbl">Explanation</span>The projection T.name means we only retrieve the name attribute. This maps directly to SELECT name FROM Students.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q2.</span>
+    <span class="badge id">trc-b-003</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: operator mapping</span>
+  </div>
+  <div class="qtext">In TRC, what does the symbol &quot;and&quot; (logical conjunction) map to in SQL?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>OR</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>AND</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>NOT</span></li>
+    <li class="opt"><span class="lt">D)</span><span>IN</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) AND</div>
+  <div class="expl"><span class="lbl">Explanation</span>The conjunction operator &quot;and&quot; (∧) in TRC maps directly to the AND keyword in SQL WHERE clauses.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q3.</span>
+    <span class="badge id">trc-b-004</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: tuple variables</span>
+  </div>
+  <div class="qtext">What is a tuple variable in TRC?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>A variable that ranges over column values</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>A variable that ranges over entire rows (tuples) of a relation</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>A constant value in a query</span></li>
+    <li class="opt"><span class="lt">D)</span><span>A SQL keyword for aliases</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) A variable that ranges over entire rows (tuples) of a relation</div>
+  <div class="expl"><span class="lbl">Explanation</span>In TRC, tuple variables range over tuples (rows) of relations. Each tuple variable represents an entire row, unlike DRC where variables range over domain values.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q4.</span>
+    <span class="badge id">trc-b-005</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: syntax rules</span>
+  </div>
+  <div class="qtext">Which TRC expression selects students older than 20?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>{T | T.age &gt; 20}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T.age &gt; 20 | T in Students}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | T &gt; 20}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{T.in Students | T.age &gt; 20}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) {T | T.age &gt; 20}</div>
+  <div class="expl"><span class="lbl">Explanation</span>The correct TRC syntax is {T | condition}, where T is a tuple variable and the condition filters tuples. T.age &gt; 20 is the filtering condition.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q5.</span>
+    <span class="badge id">trc-b-006</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">What does the existential quantifier &quot;exists&quot; mean in TRC?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>For all tuples, the condition holds</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>There is at least one tuple satisfying the condition</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>No tuples satisfy the condition</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Exactly one tuple satisfies the condition</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) There is at least one tuple satisfying the condition</div>
+  <div class="expl"><span class="lbl">Explanation</span>The existential quantifier &quot;exists&quot; (∃) asserts that there is at least one tuple in the specified relation that makes the condition true.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q6.</span>
+    <span class="badge id">trc-b-007</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: selection</span>
+  </div>
+  <div class="qtext">What is the SQL equivalent of {T | T in Students and T.dept = &quot;CS&quot;}?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>SELECT * FROM Students WHERE dept = &quot;CS&quot;</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>SELECT dept FROM Students WHERE dept = &quot;CS&quot;</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT * FROM Students OR dept = &quot;CS&quot;</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT * FROM Students HAVING dept = &quot;CS&quot;</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) SELECT * FROM Students WHERE dept = &quot;CS&quot;</div>
+  <div class="expl"><span class="lbl">Explanation</span>The condition T.dept = &quot;CS&quot; filters tuples, and the full tuple T is projected, resulting in SELECT * FROM Students WHERE dept = &quot;CS&quot;.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q7.</span>
+    <span class="badge id">trc-b-008</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: syntax rules</span>
+  </div>
+  <div class="qtext">In TRC, the vertical bar &quot;|&quot; separates:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Two relations</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>The result tuple pattern from the condition</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>The SELECT clause from the FROM clause</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Two conditions</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) The result tuple pattern from the condition</div>
+  <div class="expl"><span class="lbl">Explanation</span>In TRC syntax {tuple_pattern | condition}, the vertical bar separates the tuple pattern (what to return) from the condition (filtering criteria).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q8.</span>
+    <span class="badge id">trc-b-009</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: projection</span>
+  </div>
+  <div class="qtext">Which TRC expression retrieves only the name and age of students in the CS department?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>{T | T in Students and T.dept = &quot;CS&quot;}</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>{T.name, T.age | T in Students and T.dept = &quot;CS&quot;}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{name, age | T in Students and T.dept = &quot;CS&quot;}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{T.name and T.age | T.dept = &quot;CS&quot;}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) {T.name, T.age | T in Students and T.dept = &quot;CS&quot;}</div>
+  <div class="expl"><span class="lbl">Explanation</span>To project specific attributes, list them in the tuple pattern: {T.name, T.age | condition}. This corresponds to SELECT name, age FROM Students WHERE dept = &quot;CS&quot;.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q9.</span>
+    <span class="badge id">trc-b-010</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: operator mapping</span>
+  </div>
+  <div class="qtext">What does the &quot;not&quot; operator do in TRC?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>Reverses the result of a boolean condition</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Deletes tuples from the result</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Negates a relation name</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Converts TRC to DRC</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) Reverses the result of a boolean condition</div>
+  <div class="expl"><span class="lbl">Explanation</span>The &quot;not&quot; operator (¬) is a logical negation that reverses the truth value of a boolean condition, just like NOT in SQL.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q10.</span>
+    <span class="badge id">trc-b-011</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: selection</span>
+  </div>
+  <div class="qtext">Which TRC expression is equivalent to SELECT * FROM Students WHERE gpa &gt;= 3.0 AND dept = &quot;CS&quot;?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>{T | T in Students or T.gpa &gt;= 3.0 or T.dept = &quot;CS&quot;}</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T | T in Students and T.gpa &gt;= 3.0 and T.dept = &quot;CS&quot;}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | T.gpa &gt;= 3.0 and T.dept = &quot;CS&quot;}</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>Both B and C</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) Both B and C</div>
+  <div class="expl"><span class="lbl">Explanation</span>Both {T | T in Students and T.gpa &gt;= 3.0 and T.dept = &quot;CS&quot;} and {T | T.gpa &gt;= 3.0 and T.dept = &quot;CS&quot;} are valid, as the &quot;in Students&quot; part is implicit when attributes reference that relation.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q11.</span>
+    <span class="badge id">trc-b-012</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: selection</span>
+  </div>
+  <div class="qtext">What is the result of {T | T in Students and T.age &gt; 100} when no student is older than 100?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>An error</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>An empty relation</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>The entire Students relation</span></li>
+    <li class="opt"><span class="lt">D)</span><span>NULL</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) An empty relation</div>
+  <div class="expl"><span class="lbl">Explanation</span>When no tuples satisfy the condition, the TRC expression returns an empty relation (no rows), similar to a SQL query with a WHERE clause matching nothing.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q12.</span>
+    <span class="badge id">trc-b-013</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: operator mapping</span>
+  </div>
+  <div class="qtext">In TRC, &quot;or&quot; (∨) maps to which SQL operator?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>AND</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>OR</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>XOR</span></li>
+    <li class="opt"><span class="lt">D)</span><span>NOR</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) OR</div>
+  <div class="expl"><span class="lbl">Explanation</span>The disjunction operator &quot;or&quot; (∨) in TRC maps directly to the OR keyword in SQL.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q13.</span>
+    <span class="badge id">trc-b-014</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: tuple variables</span>
+  </div>
+  <div class="qtext">Which of the following is a valid TRC tuple variable declaration?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>T = Students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>T in Students</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>T -&gt; Students</span></li>
+    <li class="opt"><span class="lt">D)</span><span>T : Students</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) T in Students</div>
+  <div class="expl"><span class="lbl">Explanation</span>In TRC, tuple variables are declared using &quot;in&quot; to indicate they range over a relation: T in Students means T ranges over tuples in the Students relation.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q14.</span>
+    <span class="badge id">trc-b-015</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: projection</span>
+  </div>
+  <div class="qtext">What does {T.name | T in Students} return if Students has columns {name, age, dept}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All columns of all students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>A relation with a single column &quot;name&quot; containing all student names</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>A list of tuples with name as a tuple</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Only the first name value</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) A relation with a single column &quot;name&quot; containing all student names</div>
+  <div class="expl"><span class="lbl">Explanation</span>The projection T.name extracts only the name attribute from each tuple, producing a single-column relation with all student names.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q15.</span>
+    <span class="badge id">trc-i-001</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: joins</span>
+  </div>
+  <div class="qtext">Translate to SQL: {T.name | exists E(T.name = E.student and E.course = &quot;DBMS&quot;)}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>SELECT name FROM Students WHERE name IN (SELECT student FROM Enrolls WHERE course = &quot;DBMS&quot;)</span></li>
+    <li class="opt"><span class="lt">B)</span><span>SELECT name FROM Students, Enrolls WHERE name = student AND course = &quot;DBMS&quot;</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT DISTINCT S.name FROM Students S JOIN Enrolls E ON S.name = E.student WHERE E.course = &quot;DBMS&quot;</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>All of the above are equivalent</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) All of the above are equivalent</div>
+  <div class="expl"><span class="lbl">Explanation</span>The existential quantifier with a join condition translates to various SQL forms including subquery with IN, implicit join, and explicit JOIN. All express the same result: students enrolled in DBMS.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q16.</span>
+    <span class="badge id">trc-i-002</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">What does the universal quantifier &quot;forall&quot; mean in TRC?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>At least one tuple satisfies the condition</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>All tuples in the specified relation satisfy the condition</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>No tuples satisfy the condition</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Exactly half the tuples satisfy the condition</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) All tuples in the specified relation satisfy the condition</div>
+  <div class="expl"><span class="lbl">Explanation</span>The universal quantifier &quot;forall&quot; (∀) asserts that every tuple in the specified relation makes the condition true. In SQL, this is typically expressed using NOT EXISTS with a negated condition.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q17.</span>
+    <span class="badge id">trc-i-003</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">What is wrong with this TRC query: {T.name | T in Students and exists S(S in Students and S.age &gt; T.age)}?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>Nothing, it is valid</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Missing the &quot;in&quot; keyword before Students in the outer scope</span></li>
+    <li class="opt"><span class="lt">C)</span><span>The inner &quot;exists&quot; quantifier cannot reference T</span></li>
+    <li class="opt"><span class="lt">D)</span><span>S cannot be declared inside an exists clause</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) Nothing, it is valid</div>
+  <div class="expl"><span class="lbl">Explanation</span>This query is valid TRC. It selects names of students who are not the oldest (there exists another student older than them). The inner quantifier can reference T from the outer scope.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q18.</span>
+    <span class="badge id">trc-i-004</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: implications</span>
+  </div>
+  <div class="qtext">Translate: {T.name | forall C(T.name = C.student implies C.grade = &quot;A&quot;)}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>SELECT name FROM Students WHERE grade = &quot;A&quot;</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>SELECT name FROM Students WHERE NOT EXISTS (SELECT * FROM Courses C WHERE NOT (name = C.student OR C.grade = &quot;A&quot;))</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT name FROM Students WHERE grade = &quot;A&quot; AND EXISTS (SELECT * FROM Courses)</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT name FROM Students WHERE ALL grades are &quot;A&quot;</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) SELECT name FROM Students WHERE NOT EXISTS (SELECT * FROM Courses C WHERE NOT (name = C.student OR C.grade = &quot;A&quot;))</div>
+  <div class="expl"><span class="lbl">Explanation</span>The universal quantifier with implication translates to NOT EXISTS with the negated consequent. &quot;forall X: P implies Q&quot; becomes &quot;NOT EXISTS X: P AND NOT Q&quot;.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q19.</span>
+    <span class="badge id">trc-i-005</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: tuple variables</span>
+  </div>
+  <div class="qtext">In TRC, what does &quot;T.name = S.name and T.dept = S.dept&quot; with two tuple variables mean?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>It compares attributes from the same tuple</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>It compares attributes from two potentially different tuples</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>It is a syntax error</span></li>
+    <li class="opt"><span class="lt">D)</span><span>It creates a cross product</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) It compares attributes from two potentially different tuples</div>
+  <div class="expl"><span class="lbl">Explanation</span>When two different tuple variables T and S are used, the condition compares attributes from different tuples. This is used in self-joins and existential/universal quantifications.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q20.</span>
+    <span class="badge id">trc-i-006</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">Which TRC expression finds students who take ALL courses offered by the CS department?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>{T | forall C(C.dept = &quot;CS&quot; implies exists E(E.student = T.name and E.course = C.name))}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T | exists C(C.dept = &quot;CS&quot; and exists E(E.student = T.name and E.course = C.name))}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | forall C(C.dept = &quot;CS&quot; and exists E(E.student = T.name))}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{T | exists C(C.dept = &quot;CS&quot; implies forall E(E.student = T.name))}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) {T | forall C(C.dept = &quot;CS&quot; implies exists E(E.student = T.name and E.course = C.name))}</div>
+  <div class="expl"><span class="lbl">Explanation</span>Universal quantification over CS courses with an implication that each course must be found in the enrollment of the student. This is the classic &quot;takes all&quot; pattern requiring forall + implies + exists.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q21.</span>
+    <span class="badge id">trc-i-007</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: negation</span>
+  </div>
+  <div class="qtext">What is the SQL equivalent of {T | not exists S(S in Students and S.dept = T.dept and S.gpa &gt; T.gpa)}?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>Students with the highest GPA in their department</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Students who have no department</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students with GPA higher than at least one other student</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who share a department with someone</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) Students with the highest GPA in their department</div>
+  <div class="expl"><span class="lbl">Explanation</span>The negated existential means &quot;there is no other student in the same department with a higher GPA,&quot; which identifies students with the maximum GPA in their department.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q22.</span>
+    <span class="badge id">trc-i-008</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: implications</span>
+  </div>
+  <div class="qtext">Which of these is a correct mapping of &quot;implies&quot; (→) to SQL?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>A → B becomes A AND B</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>A → B becomes NOT A OR B</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>A → B becomes A OR NOT B</span></li>
+    <li class="opt"><span class="lt">D)</span><span>A → B becomes NOT A AND B</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) A → B becomes NOT A OR B</div>
+  <div class="expl"><span class="lbl">Explanation</span>Material implication A → B is logically equivalent to NOT A OR B. This is a fundamental equivalence used when translating TRC implications to SQL.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q23.</span>
+    <span class="badge id">trc-i-009</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: syntax rules</span>
+  </div>
+  <div class="qtext">Translate: {T | T in Students and T.age &gt; (SELECT MAX(age) FROM Students)} -- what is this conceptually?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All students</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Students older than every other student</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students older than the average age</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>This is not valid TRC</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) This is not valid TRC</div>
+  <div class="expl"><span class="lbl">Explanation</span>TRC does not have a SELECT MAX subquery syntax. The correct way to express &quot;oldest student&quot; in TRC is: {T | forall S(S in Students implies T.age &gt;= S.age)}.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q24.</span>
+    <span class="badge id">trc-i-010</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: negation</span>
+  </div>
+  <div class="qtext">What does {T.name | T in Students and not exists E(E.student = T.name and E.course = &quot;DBMS&quot;)} return?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who take DBMS</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students who do not take DBMS</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>All course names except DBMS</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who take only DBMS</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students who do not take DBMS</div>
+  <div class="expl"><span class="lbl">Explanation</span>The negated existential &quot;not exists&quot; means there is no enrollment record for this student in DBMS, so it returns students who have NOT enrolled in the DBMS course.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q25.</span>
+    <span class="badge id">trc-i-011</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: tuple variables</span>
+  </div>
+  <div class="qtext">In TRC, can a tuple variable reference attributes from a relation that is not in its &quot;in&quot; clause?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Yes, if the relation has compatible attributes</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>No, a tuple variable can only access attributes of the relation it ranges over</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Yes, but only inside an exists clause</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Only if the attribute names are unique across all relations</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) No, a tuple variable can only access attributes of the relation it ranges over</div>
+  <div class="expl"><span class="lbl">Explanation</span>A tuple variable in TRC is bound to a specific relation via the &quot;in&quot; clause and can only reference attributes of that relation.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q26.</span>
+    <span class="badge id">trc-i-012</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">What does {T.name | T in Students and forall C(C in Courses implies exists E(E.student = T.name and E.course = C.name))} express?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who take at least one course</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students who take every course</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Courses taken by all students</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who take no courses</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students who take every course</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every course C, there must exist an enrollment E linking this student to that course. This means the student is enrolled in every course in the Courses relation.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q27.</span>
+    <span class="badge id">trc-i-013</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: SQL equivalents</span>
+  </div>
+  <div class="qtext">Which SQL query does NOT correspond to any valid TRC expression?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>SELECT * FROM Students WHERE age &gt; 20</span></li>
+    <li class="opt"><span class="lt">B)</span><span>SELECT * FROM Students WHERE EXISTS (SELECT * FROM Enrolls)</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>SELECT TOP 1 * FROM Students ORDER BY age</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT name FROM Students WHERE dept = &quot;CS&quot;</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) SELECT TOP 1 * FROM Students ORDER BY age</div>
+  <div class="expl"><span class="lbl">Explanation</span>TRC and relational algebra do not have a concept of &quot;top N&quot; or ORDER BY. TRC is based on set semantics, not ordered results. SQL-specific constructs like TOP and ORDER BY have no TRC equivalent.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q28.</span>
+    <span class="badge id">trc-a-001</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">Translate: {T.name | forall S(T.name != S.name implies exists E(E.student = S.name and not exists F(F.student = T.name and F.course = E.course)))}</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>Students who take at least one course no other student takes</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Students who share a course with someone</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who take all courses that some other student takes</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who do not share any course with any other student</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) Students who take at least one course no other student takes</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every other student S, if S takes some course, there must be a course that T does not take. Equivalently, there is some course that only T takes (no other student takes it).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q29.</span>
+    <span class="badge id">trc-a-002</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: common mistakes</span>
+  </div>
+  <div class="qtext">What is wrong with: {T | forall S(S in Students implies T.age &gt; S.age)}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Nothing, this returns students strictly older than all others</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>This would also exclude the student from comparing with themselves</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Syntax error: cannot use forall with implies</span></li>
+    <li class="opt"><span class="lt">D)</span><span>The condition should use exists instead of forall</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) This would also exclude the student from comparing with themselves</div>
+  <div class="expl"><span class="lbl">Explanation</span>The query returns students older than ALL students including themselves, which is impossible (no one is strictly older than themselves). To find the oldest student, you need: {T | forall S(S in Students implies T.age &gt;= S.age)} (with &gt;=).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q30.</span>
+    <span class="badge id">trc-a-003</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: implications</span>
+  </div>
+  <div class="qtext">Translate: {T.name | forall C(C in Courses implies (exists E1(E1.student = T.name and E1.course = C.name) implies exists E2(E2.student = T.name and E2.course = C.name and E2.grade = &quot;A&quot;)))}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who take every course and get an A in all of them</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students who get an A in every course they take</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who take at least one course with an A</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who get an A only in courses they take</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students who get an A in every course they take</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every course, if the student takes it, then they get an A in it. This is the &quot;for all courses taken, grade is A&quot; pattern. Students who take no courses also satisfy this vacuously.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q31.</span>
+    <span class="badge id">trc-a-004</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: negation</span>
+  </div>
+  <div class="qtext">What is the SQL equivalent of {T.name | not exists S(S in Students and T.name = S.name and exists E(E.student = S.name and not exists F(F.student = T.name and F.course = E.course)))}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who take all courses that other students take</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Students who do not take any course that another student takes</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who take at least one course another student takes</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>Students who take a superset of courses compared to every other student</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) Students who take a superset of courses compared to every other student</div>
+  <div class="expl"><span class="lbl">Explanation</span>The double negation pattern expresses: for every other student, every course that student takes is also taken by T. This means T takes a superset of courses compared to every other student.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q32.</span>
+    <span class="badge id">trc-a-005</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: common mistakes</span>
+  </div>
+  <div class="qtext">Can the TRC expression {T.name | T in Students and T.age &gt; 20 and T.age &lt; 18} return any results?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Yes, if there are students between 18 and 20</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>No, because the conditions are contradictory</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Yes, all students would be returned</span></li>
+    <li class="opt"><span class="lt">D)</span><span>It depends on the database instance</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) No, because the conditions are contradictory</div>
+  <div class="expl"><span class="lbl">Explanation</span>No student can simultaneously have age &gt; 20 and age &lt; 18. These are contradictory conditions, so the result is always an empty relation regardless of the database contents.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q33.</span>
+    <span class="badge id">trc-a-006</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">Translate: {T | exists S(S in Students and T.name = S.name and forall E(E.student = T.name implies E.grade = &quot;A&quot;))}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who get at least one A</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students whose all grades are A</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who share a name with someone who has all A grades</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who have at least one grade that is not A</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students whose all grades are A</div>
+  <div class="expl"><span class="lbl">Explanation</span>The exists S with T.name = S.name is essentially saying &quot;T is a student.&quot; Combined with forall E, if T takes a course, the grade must be A. This means all of T's grades are A.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q34.</span>
+    <span class="badge id">trc-a-007</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: common mistakes</span>
+  </div>
+  <div class="qtext">What is wrong with using &quot;or&quot; instead of &quot;implies&quot; in: {T | forall S(S in Students implies T.dept = S.dept)}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Nothing, both express the same thing</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Using &quot;or&quot; would give: forall S(S in Students or T.dept = S.dept), which is always true</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Using &quot;or&quot; would give: forall S(S in Students and T.dept = S.dept), which is too restrictive</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Using &quot;or&quot; is a syntax error</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Using &quot;or&quot; would give: forall S(S in Students or T.dept = S.dept), which is always true</div>
+  <div class="expl"><span class="lbl">Explanation</span>If you replace &quot;implies&quot; with &quot;or&quot;, you get forall S(S in Students or T.dept = S.dept). Since S in Students is always true (by definition of the quantifier), this condition is trivially satisfied by all tuples, returning the entire relation.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q35.</span>
+    <span class="badge id">trc-a-008</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: negation</span>
+  </div>
+  <div class="qtext">Translate to SQL: {T.name | T in Students and not forall C(C in Courses implies exists E(E.student = T.name and E.course = C.name))}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who take all courses</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students who do NOT take all courses (take at least one course, but not every course)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who take no courses</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who take exactly one course</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students who do NOT take all courses (take at least one course, but not every course)</div>
+  <div class="expl"><span class="lbl">Explanation</span>NOT forall (condition) is equivalent to exists (not condition). So this means there exists at least one course the student does NOT take, meaning they don't take every course.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q36.</span>
+    <span class="badge id">trc-a-009</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">Which TRC expression is logically equivalent to {T.name | forall S(T.name = S.name or not exists E(E.student = S.name))}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who take at least one course</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Students who are the only student</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>All students (regardless of enrollment)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who share a name with at least one other student</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) All students (regardless of enrollment)</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every student S, either T and S have the same name, or S takes no courses. If there exists any student with courses who has a different name from T, the condition fails. But in practice, this covers all students because T itself satisfies T.name = S.name.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q37.</span>
+    <span class="badge id">trc-a-010</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: syntax rules</span>
+  </div>
+  <div class="qtext">Can TRC express &quot;the student with the second-highest GPA&quot;?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Yes, using nested forall quantifiers</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Yes, using exists and not exists with a counting condition</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>No, TRC cannot express this because it lacks counting capabilities</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Yes, but only if there are no ties</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) No, TRC cannot express this because it lacks counting capabilities</div>
+  <div class="expl"><span class="lbl">Explanation</span>TRC is based on first-order logic and cannot express counting (&quot;at least k&quot; or &quot;exactly k&quot; for arbitrary k). &quot;Second-highest&quot; requires counting distinct GPA values, which is beyond first-order expressibility.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q38.</span>
+    <span class="badge id">trc-a-011</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: joins</span>
+  </div>
+  <div class="qtext">What does {T | T in Students and exists S(S in Students and S.name = &quot;Alice&quot; and T.dept = S.dept and T.name != &quot;Alice&quot;)} return?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Alice and all students in her department</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>All students in Alice's department except Alice</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>All students named Alice</span></li>
+    <li class="opt"><span class="lt">D)</span><span>All students not in Alice's department</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) All students in Alice's department except Alice</div>
+  <div class="expl"><span class="lbl">Explanation</span>The query finds students who are in the same department as Alice but are not Alice themselves. This is a classic &quot;other students in same group&quot; pattern.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q39.</span>
+    <span class="badge id">trc-a-012</span>
+    <span class="badge solid">TRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: syntax rules</span>
+  </div>
+  <div class="qtext">Is there a difference between {T | T in Students and T.age &gt; 20} and {T | T.age &gt; 20}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Yes, the first only checks students, the second checks all tuples</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Yes, the first is faster</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>No, they are semantically equivalent assuming T implicitly ranges over Students</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>No, the second is invalid syntax</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) No, they are semantically equivalent assuming T implicitly ranges over Students</div>
+  <div class="expl"><span class="lbl">Explanation</span>In standard TRC, {T | T.age &gt; 20} implicitly assumes T ranges over some relation (usually the only one in context). Both expressions are semantically equivalent when T ranges over Students.</div>
+</article>
+<h2>DRC Questions &mdash; 34</h2>
+<p class="subtitle">Basic: 11 &nbsp;|&nbsp; Intermediate: 12 &nbsp;|&nbsp; Advanced: 11</p>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q40.</span>
+    <span class="badge id">drc-b-002</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: syntax rules</span>
+  </div>
+  <div class="qtext">What is the DRC syntax for selecting all name-age pairs from Students?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>{T | T in Students}</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>{&lt;n, a&gt; | &lt;n, a, d&gt; in Students}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{n, a | n in Students.name}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{&lt;n&gt; | n in Students}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) {&lt;n, a&gt; | &lt;n, a, d&gt; in Students}</div>
+  <div class="expl"><span class="lbl">Explanation</span>DRC uses angle brackets to list domain variables: {&lt;n, a&gt; | &lt;n, a, d&gt; in Students} where n, a, d are domain variables matching the attributes of Students (name, age, dept).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q41.</span>
+    <span class="badge id">drc-b-003</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: DRC domain variables</span>
+  </div>
+  <div class="qtext">Which DRC expression retrieves only the names of students in the CS department?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>{&lt;n&gt; | &lt;n, d&gt; in Students and d = &quot;CS&quot;}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{&lt;n, d&gt; | &lt;n, d&gt; in Students and d = &quot;CS&quot;}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{n | n in Students and n.dept = &quot;CS&quot;}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{&lt;n&gt; | n in Students.name and dept = &quot;CS&quot;}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) {&lt;n&gt; | &lt;n, d&gt; in Students and d = &quot;CS&quot;}</div>
+  <div class="expl"><span class="lbl">Explanation</span>In DRC, the result tuple &lt;n&gt; is listed before the bar, and the condition uses domain variables. We include d = &quot;CS&quot; in the condition but only project &lt;n&gt;.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q42.</span>
+    <span class="badge id">drc-b-004</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: projection</span>
+  </div>
+  <div class="qtext">What does the DRC expression {&lt;n, a&gt; | &lt;n, a, d&gt; in Students} return?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All attributes of all students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Name and age of all students</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Only names of students</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Only ages of students</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Name and age of all students</div>
+  <div class="expl"><span class="lbl">Explanation</span>The result list &lt;n, a&gt; specifies two domain variables to return, so the result contains name and age columns for all students.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q43.</span>
+    <span class="badge id">drc-b-005</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">In DRC, what does &quot;exists&quot; quantify over?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>Domain variables</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Tuple variables</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Relations</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Attributes</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) Domain variables</div>
+  <div class="expl"><span class="lbl">Explanation</span>In DRC, the existential quantifier &quot;exists&quot; quantifies over domain variables (individual values), not tuples. For example, exists x means &quot;there exists some domain value x.&quot;</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q44.</span>
+    <span class="badge id">drc-b-006</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: selection</span>
+  </div>
+  <div class="qtext">Which DRC expression finds students older than 20?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>{&lt;n&gt; | &lt;n, a, d&gt; in Students and a &gt; 20}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{&lt;n, a&gt; | a &gt; 20}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{n | n in Students and n.age &gt; 20}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{&lt;n&gt; | exists a(&lt;n, a&gt; in Students and a &gt; 20)}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) {&lt;n&gt; | &lt;n, a, d&gt; in Students and a &gt; 20}</div>
+  <div class="expl"><span class="lbl">Explanation</span>The correct DRC form lists all domain variables matching the relation schema in the condition part, with the filtering condition a &gt; 20 applied to the age variable.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q45.</span>
+    <span class="badge id">drc-b-007</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: DRC domain variables</span>
+  </div>
+  <div class="qtext">What is the main difference between TRC and DRC?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>TRC is more powerful than DRC</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>TRC uses tuple variables while DRC uses domain variables</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>DRC cannot express joins</span></li>
+    <li class="opt"><span class="lt">D)</span><span>TRC cannot use quantifiers</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) TRC uses tuple variables while DRC uses domain variables</div>
+  <div class="expl"><span class="lbl">Explanation</span>The fundamental difference is that TRC variables range over tuples (rows), while DRC variables range over domains (individual column values). Both are equally expressive.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q46.</span>
+    <span class="badge id">drc-b-008</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: selection</span>
+  </div>
+  <div class="qtext">Which DRC expression is equivalent to SELECT * FROM Students WHERE dept = &quot;CS&quot;?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>{&lt;n, a, d&gt; | &lt;n, a, d&gt; in Students and d = &quot;CS&quot;}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{&lt;n, a&gt; | &lt;n, a, d&gt; in Students}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{&lt;d&gt; | d = &quot;CS&quot;}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{&lt;n, a, d&gt; | d = &quot;CS&quot;}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) {&lt;n, a, d&gt; | &lt;n, a, d&gt; in Students and d = &quot;CS&quot;}</div>
+  <div class="expl"><span class="lbl">Explanation</span>To select all columns with a filter, list all domain variables in both the result and condition, with the filtering condition on the relevant variable.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q47.</span>
+    <span class="badge id">drc-b-009</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: syntax rules</span>
+  </div>
+  <div class="qtext">In DRC, angle brackets &lt; &gt; are used to:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Denote logical implications</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>List domain variables in the result or condition</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Indicate quantifier scope</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Define tuple variable ranges</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) List domain variables in the result or condition</div>
+  <div class="expl"><span class="lbl">Explanation</span>Angle brackets in DRC are used to list domain variables, both in the result specification (what to return) and in the condition (tuple membership in a relation).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q48.</span>
+    <span class="badge id">drc-b-010</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: DRC domain variables</span>
+  </div>
+  <div class="qtext">What does {&lt;x&gt; | exists y(&lt;x, y&gt; in Enrolls and y = &quot;DBMS&quot;)} return?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All courses named DBMS</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>All students enrolled in DBMS</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>All student-course pairs where the course is DBMS</span></li>
+    <li class="opt"><span class="lt">D)</span><span>The count of DBMS enrollments</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) All students enrolled in DBMS</div>
+  <div class="expl"><span class="lbl">Explanation</span>The result &lt;x&gt; projects only the student name, and the condition filters for enrollments where the course is DBMS. So it returns names of students enrolled in DBMS.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q49.</span>
+    <span class="badge id">drc-b-011</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: operator mapping</span>
+  </div>
+  <div class="qtext">Which operator maps DRC conditions to SQL WHERE clauses?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>The angle brackets</span></li>
+    <li class="opt"><span class="lt">B)</span><span>The vertical bar</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>The logical connectives (and, or, not)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>The quantifiers</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) The logical connectives (and, or, not)</div>
+  <div class="expl"><span class="lbl">Explanation</span>Logical connectives &quot;and&quot;, &quot;or&quot;, and &quot;not&quot; in DRC conditions map directly to AND, OR, and NOT in SQL WHERE clauses.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q50.</span>
+    <span class="badge id">drc-b-012</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: syntax rules</span>
+  </div>
+  <div class="qtext">What is wrong with {&lt;n&gt; | n in Students}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Nothing, it is valid DRC</span></li>
+    <li class="opt"><span class="lt">B)</span><span>DRC requires angle brackets around the condition tuple</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>A domain variable cannot be &quot;in&quot; a relation without listing all attributes</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>The result should list all attributes</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) A domain variable cannot be &quot;in&quot; a relation without listing all attributes</div>
+  <div class="expl"><span class="lbl">Explanation</span>In DRC, a domain variable cannot be directly checked for membership in a relation. You must list all domain variables matching the relation schema: {&lt;n&gt; | &lt;n, a, d&gt; in Students}.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q51.</span>
+    <span class="badge id">drc-i-001</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: selection</span>
+  </div>
+  <div class="qtext">Translate: {&lt;n&gt; | exists a exists d(&lt;n, a, d&gt; in Students and d = &quot;CS&quot; and a &gt; 20)}</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>SELECT name FROM Students WHERE dept = &quot;CS&quot; AND age &gt; 20</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>SELECT * FROM Students WHERE dept = &quot;CS&quot; OR age &gt; 20</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT name, age FROM Students WHERE dept = &quot;CS&quot;</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT name FROM Students WHERE dept = &quot;CS&quot;</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) SELECT name FROM Students WHERE dept = &quot;CS&quot; AND age &gt; 20</div>
+  <div class="expl"><span class="lbl">Explanation</span>The existential quantifiers bind the domain variables a and d, the condition filters for CS department and age &gt; 20, and the result projects only the name.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q52.</span>
+    <span class="badge id">drc-i-002</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: DRC domain variables</span>
+  </div>
+  <div class="qtext">Translate: {&lt;s&gt; | exists c(&lt;s, c&gt; in Enrolls and c = &quot;DBMS&quot;)}</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>SELECT student FROM Enrolls WHERE course = &quot;DBMS&quot;</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>SELECT course FROM Enrolls WHERE student = &quot;DBMS&quot;</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT * FROM Enrolls WHERE course = &quot;DBMS&quot;</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT s FROM Students WHERE s in Enrolls</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) SELECT student FROM Enrolls WHERE course = &quot;DBMS&quot;</div>
+  <div class="expl"><span class="lbl">Explanation</span>The result &lt;s&gt; projects the student variable, and the condition filters for the DBMS course. This is equivalent to selecting students enrolled in DBMS.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q53.</span>
+    <span class="badge id">drc-i-003</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">What does {&lt;s&gt; | forall c(&lt;s, c&gt; in Enrolls implies c in RequiredCourses)} express?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who take at least one required course</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students who take only required courses</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who take all required courses</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who take no required courses</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students who take only required courses</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every enrollment (s, c), if s is enrolled in c, then c must be in RequiredCourses. This means every course the student takes is a required course.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q54.</span>
+    <span class="badge id">drc-i-004</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: projection</span>
+  </div>
+  <div class="qtext">Translate: {&lt;s, g&gt; | exists c(&lt;s, c, g&gt; in Grades and g = &quot;A&quot;)}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All grades for all students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Student-grade pairs where the grade is A</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>All courses with grade A</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who got an A in some course</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Student-grade pairs where the grade is A</div>
+  <div class="expl"><span class="lbl">Explanation</span>The result &lt;s, g&gt; projects student and grade, and the condition filters for grade = &quot;A&quot;. This returns pairs of students and their A grades.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q55.</span>
+    <span class="badge id">drc-i-005</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: common mistakes</span>
+  </div>
+  <div class="qtext">What is wrong with {&lt;n&gt; | &lt;n, a&gt; in Students and a &gt; 20} if Students has schema {name, age, dept}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Nothing, it is valid</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>The tuple &lt;n, a&gt; has only 2 elements but Students has 3 attributes</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Domain variables cannot be compared with &gt;</span></li>
+    <li class="opt"><span class="lt">D)</span><span>The result should include all attributes</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) The tuple &lt;n, a&gt; has only 2 elements but Students has 3 attributes</div>
+  <div class="expl"><span class="lbl">Explanation</span>In DRC, the tuple in the condition must match the arity (number of attributes) of the relation. Students has 3 attributes, so the condition must use &lt;n, a, d&gt; not &lt;n, a&gt;.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q56.</span>
+    <span class="badge id">drc-i-006</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: negation</span>
+  </div>
+  <div class="qtext">Translate: {&lt;s&gt; | not exists c(&lt;s, c&gt; in Enrolls and c = &quot;DBMS&quot;)}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students enrolled in DBMS</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students not enrolled in DBMS</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Courses not taken by any student</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who take no courses at all</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students not enrolled in DBMS</div>
+  <div class="expl"><span class="lbl">Explanation</span>The negated existential means there is no enrollment record for student s in the DBMS course, returning students not enrolled in DBMS.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q57.</span>
+    <span class="badge id">drc-i-007</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: joins</span>
+  </div>
+  <div class="qtext">Which DRC expression finds students who are enrolled in both &quot;DBMS&quot; and &quot;OS&quot;?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>{&lt;s&gt; | exists c1 exists c2(&lt;s, c1&gt; in Enrolls and &lt;s, c2&gt; in Enrolls and c1 = &quot;DBMS&quot; and c2 = &quot;OS&quot;)}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{&lt;s&gt; | exists c(&lt;s, c&gt; in Enrolls and c = &quot;DBMS&quot; and c = &quot;OS&quot;)}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{&lt;s&gt; | &lt;s, &quot;DBMS&quot;, &quot;OS&quot;&gt; in Enrolls}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{&lt;s&gt; | &lt;s, &quot;DBMS&quot;&gt; in Enrolls or &lt;s, &quot;OS&quot;&gt; in Enrolls}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) {&lt;s&gt; | exists c1 exists c2(&lt;s, c1&gt; in Enrolls and &lt;s, c2&gt; in Enrolls and c1 = &quot;DBMS&quot; and c2 = &quot;OS&quot;)}</div>
+  <div class="expl"><span class="lbl">Explanation</span>To check enrollment in two different courses, we need two separate existential quantifiers with different course variables, each linked to the student via Enrolls.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q58.</span>
+    <span class="badge id">drc-i-008</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">In DRC, how do you express &quot;there exists a student with GPA above 3.5&quot;?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>exists s exists a exists d(&lt;s, a, d&gt; in Students and a &gt; 3.5)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>exists x(x &gt; 3.5)</span></li>
+    <li class="opt"><span class="lt">C)</span><span>exists s(s in Students and s.gpa &gt; 3.5)</span></li>
+    <li class="opt"><span class="lt">D)</span><span>forall s(s in Students implies s.gpa &gt; 3.5)</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) exists s exists a exists d(&lt;s, a, d&gt; in Students and a &gt; 3.5)</div>
+  <div class="expl"><span class="lbl">Explanation</span>In DRC, existential quantification requires binding domain variables and checking tuple membership in a relation with the filtering condition.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q59.</span>
+    <span class="badge id">drc-i-009</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: negation</span>
+  </div>
+  <div class="qtext">What does {&lt;n, a&gt; | &lt;n, a, d&gt; in Students and not exists c2(&lt;n, c2&gt; in Enrolls)} return?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who are enrolled in at least one course</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Students who are not enrolled in any course</span></li>
+    <li class="opt"><span class="lt">C)</span><span>All students with their age</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>Students who take no courses and their ages</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) Students who take no courses and their ages</div>
+  <div class="expl"><span class="lbl">Explanation</span>The query returns name-age pairs for students who have no enrollment records. The &quot;not exists&quot; with the Enrolls relation filters for students not enrolled in any course.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q60.</span>
+    <span class="badge id">drc-i-010</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">Translate: {&lt;s&gt; | forall c(&lt;s, c&gt; in Enrolls implies exists g(&lt;s, c, g&gt; in Grades and g &gt;= 3.0))}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who have at least one grade above 3.0</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students whose all enrolled courses have a grade &gt;= 3.0</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students enrolled in courses with grade &gt;= 3.0</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Courses where all students have grade &gt;= 3.0</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students whose all enrolled courses have a grade &gt;= 3.0</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every enrollment of student s in course c, there must exist a grade record showing g &gt;= 3.0. This means all of the student's grades are at least 3.0.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q61.</span>
+    <span class="badge id">drc-i-011</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: syntax rules</span>
+  </div>
+  <div class="qtext">Can the following DRC expression return duplicates: {&lt;n&gt; | &lt;n, a, d&gt; in Students and d = &quot;CS&quot;}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Yes, if multiple students have the same name</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>No, DRC always returns a set</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Yes, but only if the relation has duplicate rows</span></li>
+    <li class="opt"><span class="lt">D)</span><span>No, because domain variables are unique</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) No, DRC always returns a set</div>
+  <div class="expl"><span class="lbl">Explanation</span>DRC is based on set semantics, so it cannot return duplicate tuples. Even if multiple students have the same name, each name appears only once in the result.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q62.</span>
+    <span class="badge id">drc-i-012</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">What does {&lt;s, c&gt; | &lt;s, c&gt; in Enrolls and forall g(&lt;s, c, g&gt; in Grades implies g = &quot;A&quot;)} express?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All student-course enrollments</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Enrollments where the student got an A</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>Enrollments where if there is a grade, it must be A</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Enrollments where no grade has been assigned</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) Enrollments where if there is a grade, it must be A</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every grade record for this student-course pair, the grade must be A. This captures enrollments where all recorded grades (if any) are A.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q63.</span>
+    <span class="badge id">drc-a-001</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">Translate: {&lt;s&gt; | exists c1(&lt;s, c1&gt; in Enrolls and forall c2(&lt;s, c2&gt; in Enrolls implies c2 = c1))}</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>Students enrolled in exactly one course</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Students enrolled in at least one course</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students enrolled in all courses</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students enrolled in more than one course</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) Students enrolled in exactly one course</div>
+  <div class="expl"><span class="lbl">Explanation</span>There exists a course c1 that s is enrolled in, and for every enrollment c2 of s, c2 must equal c1. This means s is enrolled in exactly one course.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q64.</span>
+    <span class="badge id">drc-a-002</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">What does {&lt;s&gt; | forall c1(&lt;s, c1&gt; in Enrolls implies exists c2(&lt;s, c2&gt; in Enrolls and c2 != c1))} express?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students enrolled in exactly one course</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students enrolled in at least two courses</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students enrolled in no courses</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students enrolled in all courses</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students enrolled in at least two courses</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every course c1 that s takes, there must exist a different course c2 that s also takes. This is only possible if s is enrolled in at least two courses.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q65.</span>
+    <span class="badge id">drc-a-003</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: negation</span>
+  </div>
+  <div class="qtext">Translate: {&lt;s&gt; | not exists c1(&lt;s, c1&gt; in Enrolls and not exists c2(&lt;s, c2&gt; in Enrolls and c2 != c1))}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students enrolled in at most one course</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students enrolled in at least two courses</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students enrolled in exactly one course</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students enrolled in no courses</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students enrolled in at least two courses</div>
+  <div class="expl"><span class="lbl">Explanation</span>Double negation: it is not the case that there exists a course where no other course exists. This means for every course, another different course exists, requiring at least two enrollments.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q66.</span>
+    <span class="badge id">drc-a-004</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">Can DRC express &quot;find the student with the maximum GPA&quot; without using aggregate functions?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>Yes: {&lt;s&gt; | exists a(&lt;s, a&gt; in Students and forall a2(forall s2(&lt;s2, a2&gt; in Students implies a &gt;= a2)))}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Yes: {&lt;s&gt; | &lt;s, a&gt; in Students and a = max(gpa)}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>No, DRC cannot express maximum without aggregates</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Yes, but only for numeric GPA values</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) Yes: {&lt;s&gt; | exists a(&lt;s, a&gt; in Students and forall a2(forall s2(&lt;s2, a2&gt; in Students implies a &gt;= a2)))}</div>
+  <div class="expl"><span class="lbl">Explanation</span>DRC can express maximum using universal quantification: s has GPA a, and for all other students s2 with GPA a2, a &gt;= a2. This does not require aggregate functions.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q67.</span>
+    <span class="badge id">drc-a-005</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: common mistakes</span>
+  </div>
+  <div class="qtext">What is wrong with {&lt;n&gt; | exists a(&lt;n, a&gt; in Students and a &gt; 20)} if Students has schema {name, age, dept}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Nothing, it is valid</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>The tuple &lt;n, a&gt; has 2 elements but Students has 3 attributes</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Domain variable a cannot be compared</span></li>
+    <li class="opt"><span class="lt">D)</span><span>The exists quantifier is incorrectly placed</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) The tuple &lt;n, a&gt; has 2 elements but Students has 3 attributes</div>
+  <div class="expl"><span class="lbl">Explanation</span>The condition tuple must match the arity of the relation. Students has 3 attributes (name, age, dept), so the condition must use &lt;n, a, d&gt; with 3 domain variables, not &lt;n, a&gt; with 2.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q68.</span>
+    <span class="badge id">drc-a-006</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">Translate: {&lt;s&gt; | forall c(&lt;s, c&gt; in Enrolls implies exists g(&lt;s, c, g&gt; in Grades and g = &quot;A&quot;))}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who get an A in at least one course</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students who get an A in every course they are enrolled in</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students enrolled in courses graded A</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students whose all grades are A across all courses</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students who get an A in every course they are enrolled in</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every course the student is enrolled in, there must exist a grade record showing grade A. This means all of the student's grades are A.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q69.</span>
+    <span class="badge id">drc-a-007</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: quantifiers</span>
+  </div>
+  <div class="qtext">Can DRC express &quot;students who take all courses that Alice takes&quot;?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Yes: {&lt;s&gt; | forall c(&lt;s, c&gt; in Enrolls or not &lt;&quot;Alice&quot;, c&gt; in Enrolls)}</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Yes: {&lt;s&gt; | forall c(&lt;&quot;Alice&quot;, c&gt; in Enrolls implies &lt;s, c&gt; in Enrolls)}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>No, DRC cannot compare students this way</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Yes, but only if s != &quot;Alice&quot;</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Yes: {&lt;s&gt; | forall c(&lt;&quot;Alice&quot;, c&gt; in Enrolls implies &lt;s, c&gt; in Enrolls)}</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every course c, if Alice is enrolled in c, then s must also be enrolled in c. This correctly expresses &quot;takes all courses that Alice takes.&quot;</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q70.</span>
+    <span class="badge id">drc-a-008</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: joins</span>
+  </div>
+  <div class="qtext">What does {&lt;s1, s2&gt; | exists c(&lt;s1, c&gt; in Enrolls and &lt;s2, c&gt; in Enrolls and s1 != s2)} return?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Pairs of students who take different courses</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Pairs of students who share at least one course</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Pairs of students where one takes a course the other does not</span></li>
+    <li class="opt"><span class="lt">D)</span><span>All student pairs</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Pairs of students who share at least one course</div>
+  <div class="expl"><span class="lbl">Explanation</span>There exists a course c such that both s1 and s2 are enrolled in it, and s1 and s2 are different students. This returns pairs of students who share at least one course.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q71.</span>
+    <span class="badge id">drc-a-009</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: negation</span>
+  </div>
+  <div class="qtext">Translate: {&lt;s&gt; | not exists c(&lt;s, c&gt; in Enrolls and forall c2(&lt;s, c2&gt; in Enrolls implies c2 = c))}</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students enrolled in exactly one course</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students NOT enrolled in exactly one course (zero or two+ courses)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students enrolled in no courses</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students enrolled in multiple courses</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students NOT enrolled in exactly one course (zero or two+ courses)</div>
+  <div class="expl"><span class="lbl">Explanation</span>The inner part says &quot;s is enrolled in exactly one course&quot; (there exists c and all enrollments equal c). The outer negation says it is NOT the case, so s takes either zero or two or more courses.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q72.</span>
+    <span class="badge id">drc-a-010</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: common mistakes</span>
+  </div>
+  <div class="qtext">Is {&lt;s&gt; | &lt;s&gt; in Students} valid DRC if Students has schema {name, age, dept}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Yes, it selects all students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>No, because &lt;s&gt; has 1 element but Students has 3 attributes</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Yes, but it returns only names</span></li>
+    <li class="opt"><span class="lt">D)</span><span>No, DRC does not support single-variable tuples</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) No, because &lt;s&gt; has 1 element but Students has 3 attributes</div>
+  <div class="expl"><span class="lbl">Explanation</span>In DRC, tuple membership requires matching arity. Students has 3 attributes, so the condition must use &lt;s, a, d&gt; not &lt;s&gt;. Single-variable tuples cannot match 3-attribute relations.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q73.</span>
+    <span class="badge id">drc-a-011</span>
+    <span class="badge solid">DRC</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: negation</span>
+  </div>
+  <div class="qtext">What does {&lt;s, c&gt; | &lt;s, c&gt; in Enrolls and not exists g(&lt;s, c, g&gt; in Grades)} express?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All enrollments with grades</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Enrollments that have no grade assigned</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who have not been graded</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Courses with no students</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Enrollments that have no grade assigned</div>
+  <div class="expl"><span class="lbl">Explanation</span>For the student-course pair (s, c) enrolled in Enrolls, there is no grade record in Grades. This identifies enrollments awaiting grading.</div>
+</article>
+<h2>General Questions &mdash; 23</h2>
+<p class="subtitle">Basic: 7 &nbsp;|&nbsp; Intermediate: 9 &nbsp;|&nbsp; Advanced: 7</p>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q74.</span>
+    <span class="badge id">gen-b-001</span>
+    <span class="badge solid">General</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">Relational calculus is based on which mathematical logic?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Propositional logic</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>First-order predicate logic</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Modal logic</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Temporal logic</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) First-order predicate logic</div>
+  <div class="expl"><span class="lbl">Explanation</span>Relational calculus (both TRC and DRC) is based on first-order predicate logic, which allows quantification over variables and predicates over relations.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q75.</span>
+    <span class="badge id">gen-b-003</span>
+    <span class="badge solid">General</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: operators</span>
+  </div>
+  <div class="qtext">What does the symbol &quot;in&quot; represent in relational calculus?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Logical conjunction</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Set membership (tuple belongs to relation)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Implication</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Existential quantification</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Set membership (tuple belongs to relation)</div>
+  <div class="expl"><span class="lbl">Explanation</span>The &quot;in&quot; symbol (∈) represents set membership, indicating that a tuple (in TRC) or a tuple of domain values (in DRC) belongs to a relation.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q76.</span>
+    <span class="badge id">gen-b-004</span>
+    <span class="badge solid">General</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">Relational calculus is a:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Procedural query language</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Non-procedural (declarative) query language</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Data manipulation language</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Data definition language</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Non-procedural (declarative) query language</div>
+  <div class="expl"><span class="lbl">Explanation</span>Relational calculus is declarative (non-procedural) — it specifies WHAT to retrieve without describing HOW to retrieve it. This contrasts with relational algebra which is procedural.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q77.</span>
+    <span class="badge id">gen-b-005</span>
+    <span class="badge solid">General</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">TRC and DRC are:</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>Equally expressive (can express the same queries)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>TRC is more powerful than DRC</span></li>
+    <li class="opt"><span class="lt">C)</span><span>DRC is more powerful than TRC</span></li>
+    <li class="opt"><span class="lt">D)</span><span>They express completely different things</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) Equally expressive (can express the same queries)</div>
+  <div class="expl"><span class="lbl">Explanation</span>TRC and DRC are provably equivalent in expressive power. Any query expressible in TRC can also be expressed in DRC and vice versa.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q78.</span>
+    <span class="badge id">gen-b-006</span>
+    <span class="badge solid">General</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">What is a &quot;safe&quot; relational calculus expression?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>One that does not use quantifiers</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>One that produces a finite result and only references values in the database</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>One that only uses SELECT statements</span></li>
+    <li class="opt"><span class="lt">D)</span><span>One that does not use negation</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) One that produces a finite result and only references values in the database</div>
+  <div class="expl"><span class="lbl">Explanation</span>A safe expression is one that is guaranteed to produce a finite result and only references domain values that appear in the database. Unsafe expressions could theoretically produce infinite results.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q79.</span>
+    <span class="badge id">gen-b-007</span>
+    <span class="badge solid">General</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: operators</span>
+  </div>
+  <div class="qtext">The &quot;implies&quot; operator (→) in logic is equivalent to:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>A and B</span></li>
+    <li class="opt"><span class="lt">B)</span><span>A or B</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>not A or B</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>not A and not B</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) not A or B</div>
+  <div class="expl"><span class="lbl">Explanation</span>Material implication A → B is logically equivalent to (not A) or (B). This is a fundamental equivalence used when translating TRC/DRC implications to SQL.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q80.</span>
+    <span class="badge id">gen-b-008</span>
+    <span class="badge solid">General</span>
+    <span class="badge">basic</span>
+    <span class="badge">topic: operators</span>
+  </div>
+  <div class="qtext">Which of these is a correct use of the existential quantifier?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>exists x(P(x)) means &quot;for all x, P(x) is true&quot;</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>exists x(P(x)) means &quot;there is at least one x for which P(x) is true&quot;</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>exists x(P(x)) means &quot;P(x) is false for all x&quot;</span></li>
+    <li class="opt"><span class="lt">D)</span><span>exists x(P(x)) means &quot;exactly one x satisfies P(x)&quot;</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) exists x(P(x)) means &quot;there is at least one x for which P(x) is true&quot;</div>
+  <div class="expl"><span class="lbl">Explanation</span>The existential quantifier asserts that there exists at least one value in the domain that makes the predicate true. It does not specify uniqueness or count.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q81.</span>
+    <span class="badge id">gen-i-001</span>
+    <span class="badge solid">General</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: SQL equivalents</span>
+  </div>
+  <div class="qtext">How is the universal quantifier &quot;forall&quot; typically expressed in SQL?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Using the ALL keyword directly</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Using NOT EXISTS with a negated condition</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Using a GROUP BY clause</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Using the HAVING clause</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Using NOT EXISTS with a negated condition</div>
+  <div class="expl"><span class="lbl">Explanation</span>SQL does not have a direct &quot;forall&quot; construct. The standard translation is: forall X: P(X) becomes NOT EXISTS X: NOT P(X). This double negation pattern is the standard approach.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q82.</span>
+    <span class="badge id">gen-i-002</span>
+    <span class="badge solid">General</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">What is the key difference between procedural and non-procedural query languages?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Procedural languages are faster</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Procedural languages specify how to get results; non-procedural specify what results to get</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Non-procedural languages cannot use conditions</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Procedural languages cannot use joins</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Procedural languages specify how to get results; non-procedural specify what results to get</div>
+  <div class="expl"><span class="lbl">Explanation</span>Procedural languages (like relational algebra) describe the sequence of operations. Non-procedural languages (like relational calculus) describe the desired result without specifying the method.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q83.</span>
+    <span class="badge id">gen-i-003</span>
+    <span class="badge solid">General</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">In relational calculus, what prevents infinite result sets?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>The use of the &quot;in&quot; operator</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Safety constraints that restrict variables to values appearing in the database</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>The use of quantifiers</span></li>
+    <li class="opt"><span class="lt">D)</span><span>The limitation to two tuple variables</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Safety constraints that restrict variables to values appearing in the database</div>
+  <div class="expl"><span class="lbl">Explanation</span>Safety constraints ensure that variables range only over values that actually appear in the database relations, preventing the possibility of infinite result sets.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q84.</span>
+    <span class="badge id">gen-i-004</span>
+    <span class="badge solid">General</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: joins</span>
+  </div>
+  <div class="qtext">Which of these TRC/DRC patterns corresponds to a SQL self-join?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>{T | T in R and T.a &gt; 20}</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>{T | exists S(S in R and T.a = S.b)}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | forall S(S in R implies T.a = S.a)}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{T | not exists S(S in R)}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) {T | exists S(S in R and T.a = S.b)}</div>
+  <div class="expl"><span class="lbl">Explanation</span>Using two tuple variables from the same relation with a condition comparing their attributes models a self-join: {T | exists S(S in R and T.a = S.b)}.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q85.</span>
+    <span class="badge id">gen-i-005</span>
+    <span class="badge solid">General</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: SQL equivalents</span>
+  </div>
+  <div class="qtext">What is the SQL equivalent of the TRC/DRC expression for &quot;all students take DBMS&quot;?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>SELECT COUNT(*) FROM Students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>NOT EXISTS (SELECT * FROM Students WHERE NOT EXISTS (SELECT * FROM Enrolls WHERE student = name AND course = &quot;DBMS&quot;))</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT * FROM Students WHERE course = &quot;DBMS&quot;</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT DISTINCT student FROM Enrolls</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) NOT EXISTS (SELECT * FROM Students WHERE NOT EXISTS (SELECT * FROM Enrolls WHERE student = name AND course = &quot;DBMS&quot;))</div>
+  <div class="expl"><span class="lbl">Explanation</span>The &quot;forall students take DBMS&quot; pattern uses nested NOT EXISTS: there does not exist a student for whom there does not exist an enrollment in DBMS. This is the standard double-negation translation.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q86.</span>
+    <span class="badge id">gen-i-006</span>
+    <span class="badge solid">General</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">In which year was the relational model proposed by E.F. Codd?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>1960</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>1970</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>1980</span></li>
+    <li class="opt"><span class="lt">D)</span><span>1990</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) 1970</div>
+  <div class="expl"><span class="lbl">Explanation</span>E.F. Codd proposed the relational model in 1970 in his seminal paper &quot;A Relational Model of Data for Large Shared Data Banks.&quot;</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q87.</span>
+    <span class="badge id">gen-i-007</span>
+    <span class="badge solid">General</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: operators</span>
+  </div>
+  <div class="qtext">Which quantifier pattern expresses &quot;at least one&quot; in relational calculus?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>forall x(P(x))</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>exists x(P(x))</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>not forall x(P(x))</span></li>
+    <li class="opt"><span class="lt">D)</span><span>exists x(forall y(P(x, y)))</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) exists x(P(x))</div>
+  <div class="expl"><span class="lbl">Explanation</span>&quot;At least one&quot; is directly expressed by the existential quantifier: exists x(P(x)) asserts there is at least one x satisfying P.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q88.</span>
+    <span class="badge id">gen-i-008</span>
+    <span class="badge solid">General</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: operators</span>
+  </div>
+  <div class="qtext">Which quantifier pattern expresses &quot;at most one&quot; in relational calculus?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>exists x(P(x))</span></li>
+    <li class="opt"><span class="lt">B)</span><span>forall x(P(x))</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>exists x(P(x) and forall y(P(y) implies y = x))</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>not exists x(P(x))</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) exists x(P(x) and forall y(P(y) implies y = x))</div>
+  <div class="expl"><span class="lbl">Explanation</span>&quot;At most one&quot; means there exists an x satisfying P, and for any y satisfying P, y must equal x (uniqueness). This combines existential and universal quantifiers.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q89.</span>
+    <span class="badge id">gen-i-009</span>
+    <span class="badge solid">General</span>
+    <span class="badge">intermediate</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">What is the Codd's theorem about relational calculus?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Relational calculus is faster than SQL</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Relational calculus and relational algebra have the same expressive power</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Relational calculus cannot handle NULLs</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Relational calculus is not Turing-complete</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Relational calculus and relational algebra have the same expressive power</div>
+  <div class="expl"><span class="lbl">Explanation</span>Codd's theorem states that relational calculus and relational algebra are equivalent in expressive power — any query expressible in one can be expressed in the other.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q90.</span>
+    <span class="badge id">gen-a-001</span>
+    <span class="badge solid">General</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">Which of these queries CANNOT be expressed in first-order relational calculus?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Find all students with GPA &gt; 3.0</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Find students who take all courses</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Find pairs of students who take exactly the same set of courses</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>Find the transitive closure of a graph (ancestors in a family tree)</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) Find the transitive closure of a graph (ancestors in a family tree)</div>
+  <div class="expl"><span class="lbl">Explanation</span>Transitive closure (&quot;find all ancestors&quot;) requires recursion, which is beyond the expressive power of first-order logic. This requires Datalog or recursive SQL (WITH RECURSIVE).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q91.</span>
+    <span class="badge id">gen-a-002</span>
+    <span class="badge solid">General</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: syntax rules</span>
+  </div>
+  <div class="qtext">What does &quot;alphabet&quot; mean in the context of relational calculus?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>The set of all valid SQL keywords</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>The set of relation names, attribute names, constant values, and operator symbols used in expressions</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>The alphabet used to name tables</span></li>
+    <li class="opt"><span class="lt">D)</span><span>The character encoding of the database</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) The set of relation names, attribute names, constant values, and operator symbols used in expressions</div>
+  <div class="expl"><span class="lbl">Explanation</span>The alphabet of relational calculus includes relation names, attribute names, domain constants, variables, operators (logical connectives), quantifiers, and parentheses.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q92.</span>
+    <span class="badge id">gen-a-003</span>
+    <span class="badge solid">General</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">Is the following a safe TRC expression: {T | T.name = &quot;Bob&quot; or T.name != &quot;Bob&quot;}?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>Yes, it is safe because it references only database values</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>No, it is unsafe because it could match any relation with a name attribute</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Yes, it returns all tuples</span></li>
+    <li class="opt"><span class="lt">D)</span><span>No, it is a syntax error</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) Yes, it is safe because it references only database values</div>
+  <div class="expl"><span class="lbl">Explanation</span>This expression is safe. It references only the constant &quot;Bob&quot; and attributes of T. It returns all tuples from the implicit relation (since the condition is always true), which is finite.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q93.</span>
+    <span class="badge id">gen-a-004</span>
+    <span class="badge solid">General</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: SQL equivalents</span>
+  </div>
+  <div class="qtext">Which logical equivalence is used when translating &quot;forall X: P(X) implies Q(X)&quot; to SQL?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>NOT EXISTS X: P(X) AND NOT Q(X)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>EXISTS X: P(X) AND Q(X)</span></li>
+    <li class="opt"><span class="lt">C)</span><span>NOT EXISTS X: NOT P(X) OR Q(X)</span></li>
+    <li class="opt"><span class="lt">D)</span><span>EXISTS X: NOT P(X) OR Q(X)</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) NOT EXISTS X: P(X) AND NOT Q(X)</div>
+  <div class="expl"><span class="lbl">Explanation</span>The universal quantifier with implication translates via DeMorgan's law: forall X: P → Q is equivalent to NOT EXISTS X: P AND NOT Q. This is the fundamental SQL translation pattern.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q94.</span>
+    <span class="badge id">gen-a-006</span>
+    <span class="badge solid">General</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">Why is the expression {T | T.age &gt; 20 or not T.age &gt; 20} considered safe?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>It is not safe because it returns an infinite set</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>It is safe because the condition is always true, so it returns the finite relation</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>It is safe because it uses only database values</span></li>
+    <li class="opt"><span class="lt">D)</span><span>It is unsafe because it uses negation</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) It is safe because the condition is always true, so it returns the finite relation</div>
+  <div class="expl"><span class="lbl">Explanation</span>Although the condition is a tautology (always true), the result is still the finite set of tuples in the relation. Safety depends on the result being finite and referencing only database values, not on the condition being selective.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q95.</span>
+    <span class="badge id">gen-a-007</span>
+    <span class="badge solid">General</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: theory</span>
+  </div>
+  <div class="qtext">Which of these is an unsafe relational calculus expression?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>{T | T in Students and T.age &gt; 20}</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T | T.age &gt; 20 or T.age &lt;= 20}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | T.name = &quot;Alice&quot; or T.name != &quot;Alice&quot;}</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>{x | x &gt; 0} where x is a domain variable not linked to any relation</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) {x | x &gt; 0} where x is a domain variable not linked to any relation</div>
+  <div class="expl"><span class="lbl">Explanation</span>An unsafe expression is one where the domain variable x ranges over an infinite domain (all integers &gt; 0) and is not restricted to values appearing in any relation. This could produce an infinite result.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q96.</span>
+    <span class="badge id">gen-a-008</span>
+    <span class="badge solid">General</span>
+    <span class="badge">advanced</span>
+    <span class="badge">topic: tuple variables</span>
+  </div>
+  <div class="qtext">In the context of TRC, what does &quot;rename&quot; or &quot;alias&quot; mean?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Changing the name of a relation permanently</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Giving a tuple variable a different name to avoid ambiguity in self-joins</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Converting TRC to DRC</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Renaming an attribute in the result</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Giving a tuple variable a different name to avoid ambiguity in self-joins</div>
+  <div class="expl"><span class="lbl">Explanation</span>When the same relation appears multiple times in a query, different tuple variables (aliases) are used to distinguish them. For example, T and S both &quot;in Students&quot; represent potentially different tuples.</div>
+</article>
+<div class="foot">Generated 2026-10-27 from the Tuple &amp; Domain Relational Calculus Translator source. 96 questions.</div>
+</div>
+</body>
+</html>

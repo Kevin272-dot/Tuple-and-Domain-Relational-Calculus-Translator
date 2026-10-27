@@ -1,3 +1,5 @@
+**Live Demo:** https://trc-translator.lrkevindaniel.workers.dev
+
 # Tuple & Domain Relational Calculus Translator
 
 An interactive educational web application that translates Tuple Relational Calculus (TRC) and Domain Relational Calculus (DRC) queries into equivalent SQL, with step-by-step visualization, AI-powered explanations, quizzes, and practice exercises.

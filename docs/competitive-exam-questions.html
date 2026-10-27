@@ -1,0 +1,1271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Competitive Exam Question Bank</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Inter", Arial, sans-serif;
+    color: #000000;
+    background: #ffffff;
+    line-height: 1.55;
+    font-size: 14px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 36px 28px 64px; }
+  h1, h2, h3, h4, p, li, td, th, span, div, strong, em { color: #000000; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.2px; }
+  h2 { font-size: 19px; margin: 34px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #000; }
+  h3 { font-size: 15px; margin: 22px 0 8px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .subtitle { font-size: 13px; margin: 0 0 18px; }
+  .rule { height: 3px; background: #000; margin: 14px 0 22px; border: 0; }
+  .meta-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 4px; }
+  .meta-box { border: 1px solid #000; border-radius: 6px; padding: 8px 14px; min-width: 130px; }
+  .meta-box .k { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; display: block; }
+  .meta-box .v { font-size: 18px; font-weight: 700; }
+  table.summary { width: 100%; border-collapse: collapse; margin: 10px 0 6px; font-size: 13px; }
+  table.summary th, table.summary td { border: 1px solid #000; padding: 6px 10px; text-align: left; }
+  table.summary th { background: #f0f0f0; font-weight: 700; }
+  .card { border: 1px solid #cfcfcf; border-radius: 8px; padding: 14px 18px 16px; margin: 16px 0; page-break-inside: avoid; break-inside: avoid; }
+  .card-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .qnum { font-weight: 700; font-size: 15px; }
+  .badge { border: 1px solid #000; border-radius: 4px; padding: 1px 7px; font-size: 10.5px; letter-spacing: 0.4px; text-transform: uppercase; white-space: nowrap; }
+  .badge.solid { background: #000; color: #ffffff !important; }
+  .badge.solid * { color: #ffffff !important; }
+  .badge.id { font-family: "Consolas", "Courier New", monospace; text-transform: none; letter-spacing: 0; }
+  .spacer { flex: 1; }
+  .qtext { white-space: pre-wrap; margin: 6px 0 10px; font-size: 14.5px; }
+  .options { list-style: none; margin: 0; padding: 0; }
+  .opt { border: 1px solid #e2e2e2; border-radius: 6px; padding: 6px 10px; margin: 6px 0; display: flex; gap: 10px; page-break-inside: avoid; }
+  .opt .lt { font-weight: 700; min-width: 20px; }
+  .opt.correct { border: 2px solid #000; background: #f3f3f3; font-weight: 600; }
+  .opt .tick { margin-left: auto; font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 700; }
+  .answer-line { margin-top: 10px; font-weight: 700; }
+  .expl { margin-top: 8px; padding: 9px 12px; border-left: 3px solid #000; background: #f6f6f6; page-break-inside: avoid; }
+  .expl .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; display: block; margin-bottom: 2px; }
+  .note { border: 1px dashed #000; border-radius: 6px; padding: 10px 14px; margin: 18px 0; font-size: 13px; }
+  .foot { margin-top: 40px; padding-top: 12px; border-top: 1px solid #000; font-size: 11.5px; }
+  .toc { margin: 8px 0 0; padding-left: 18px; }
+  .toc li { margin: 3px 0; }
+  @media print {
+    .wrap { max-width: none; padding: 0; }
+    .card { page-break-inside: avoid; }
+    @page { size: A4; margin: 14mm; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Competitive Exam Question Bank</h1>
+<p class="subtitle">Every question in the competitive-exam set (GATE, UGC NET, ISRO, BARC, IES).</p>
+<hr class="rule" />
+<div class="meta-grid">
+  <div class="meta-box"><span class="k">Questions</span><span class="v">55</span></div>
+  <div class="meta-box"><span class="k">Exams</span><span class="v">5</span></div>
+  <div class="meta-box"><span class="k">Total marks</span><span class="v">90</span></div>
+  <div class="meta-box"><span class="k">Years</span><span class="v">2015&ndash;2024</span></div>
+</div>
+<div class="note">
+  <strong>Scope.</strong> Source: <code>src/engine/gateQuestionBank.ts</code>. Each entry records the exam, year, topic,
+  difficulty, marks, all options, the correct option, and a reasoned explanation. Questions are grouped by exam and
+  ordered newest year first.
+</div>
+<h3>Contents</h3>
+<ol class="toc">
+  <li>GATE (32)</li>
+  <li>UGC NET (8)</li>
+  <li>ISRO (6)</li>
+  <li>BARC (4)</li>
+  <li>IES (5)</li>
+</ol>
+<h3>Summary by exam</h3>
+
+<table class="summary">
+  <thead><tr><th>Exam</th><th>Questions</th></tr></thead>
+  <tbody>
+    <tr><td>GATE</td><td>32</td></tr>
+    <tr><td>UGC NET</td><td>8</td></tr>
+    <tr><td>ISRO</td><td>6</td></tr>
+    <tr><td>BARC</td><td>4</td></tr>
+    <tr><td>IES</td><td>5</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>55</strong></td></tr>
+  </tbody>
+</table>
+<h3>Summary by topic</h3>
+
+<table class="summary">
+  <thead><tr><th>Topic</th><th>Questions</th></tr></thead>
+  <tbody>
+    <tr><td>TRC</td><td>23</td></tr>
+    <tr><td>DRC</td><td>9</td></tr>
+    <tr><td>Relational Algebra</td><td>6</td></tr>
+    <tr><td>SQL</td><td>9</td></tr>
+    <tr><td>General</td><td>8</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>55</strong></td></tr>
+  </tbody>
+</table>
+<h3>Summary by difficulty</h3>
+
+<table class="summary">
+  <thead><tr><th>Difficulty</th><th>Questions</th></tr></thead>
+  <tbody>
+    <tr><td>easy</td><td>15</td></tr>
+    <tr><td>medium</td><td>28</td></tr>
+    <tr><td>hard</td><td>12</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>55</strong></td></tr>
+  </tbody>
+</table>
+<h3>Summary by year</h3>
+
+<table class="summary">
+  <thead><tr><th>Year</th><th>Questions</th></tr></thead>
+  <tbody>
+    <tr><td>2024</td><td>11</td></tr>
+    <tr><td>2023</td><td>13</td></tr>
+    <tr><td>2022</td><td>11</td></tr>
+    <tr><td>2021</td><td>6</td></tr>
+    <tr><td>2020</td><td>4</td></tr>
+    <tr><td>2019</td><td>2</td></tr>
+    <tr><td>2018</td><td>2</td></tr>
+    <tr><td>2017</td><td>2</td></tr>
+    <tr><td>2016</td><td>2</td></tr>
+    <tr><td>2015</td><td>2</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>55</strong></td></tr>
+  </tbody>
+</table>
+<h2>GATE &mdash; 32 questions</h2>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q1.</span>
+    <span class="badge id">gate-2024-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2024</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">Consider the following TRC expression:
+{T.name | T in Students AND T.age &gt; 20 AND exists E(E in Enrollment AND E.student = T.name AND E.grade = &quot;A&quot;)}
+Which of the following SQL queries is equivalent?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>SELECT name FROM Students WHERE age &gt; 20 AND name IN (SELECT student FROM Enrollment WHERE grade = &quot;A&quot;)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>SELECT name FROM Students, Enrollment WHERE age &gt; 20 AND grade = &quot;A&quot;</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT DISTINCT name FROM Students WHERE age &gt; 20 OR grade = &quot;A&quot;</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT name FROM Students WHERE age &gt; 20 UNION SELECT student FROM Enrollment WHERE grade = &quot;A&quot;</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) SELECT name FROM Students WHERE age &gt; 20 AND name IN (SELECT student FROM Enrollment WHERE grade = &quot;A&quot;)</div>
+  <div class="expl"><span class="lbl">Explanation</span>The TRC expression selects names of students older than 20 who have at least one &quot;A&quot; grade in Enrollment. The existential quantifier with the join condition maps to a subquery with IN or EXISTS. Option B lacks the name join condition, C uses OR instead of AND, and D is a UNION.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q2.</span>
+    <span class="badge id">gate-2024-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2024</span>
+    <span class="badge">DRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">The DRC expression {&lt;s&gt; | exists c(&lt;s, c&gt; in Enrolls AND c = &quot;DBMS&quot;)} is equivalent to:</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>SELECT student FROM Enrolls WHERE course = &quot;DBMS&quot;</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>SELECT course FROM Enrolls WHERE student = &quot;DBMS&quot;</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT * FROM Enrolls WHERE course = &quot;DBMS&quot;</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT s FROM Students WHERE s IN (SELECT student FROM Enrolls)</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) SELECT student FROM Enrolls WHERE course = &quot;DBMS&quot;</div>
+  <div class="expl"><span class="lbl">Explanation</span>The result tuple &lt;s&gt; projects the student variable. The condition filters for enrollments where course = &quot;DBMS&quot;. This directly maps to selecting students enrolled in DBMS.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q3.</span>
+    <span class="badge id">gate-extra-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2024</span>
+    <span class="badge">Relational Algebra</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">The natural join of two relations R(A, B) and S(B, C) will have how many attributes?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>2</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>3</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>4</span></li>
+    <li class="opt"><span class="lt">D)</span><span>6</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) 3</div>
+  <div class="expl"><span class="lbl">Explanation</span>Natural join joins on the common attribute B and merges it. The result has attributes A, B, C — total 3 attributes.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q4.</span>
+    <span class="badge id">gate-extra-06</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2024</span>
+    <span class="badge">General</span>
+    <span class="badge">easy</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">What is the difference between &quot;free&quot; and &quot;bound&quot; variables in relational calculus?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>Free variables appear outside quantifier scope; bound variables appear within quantifier scope</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Free variables are not used in conditions; bound variables are</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Free variables are optional; bound variables are required</span></li>
+    <li class="opt"><span class="lt">D)</span><span>There is no difference</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) Free variables appear outside quantifier scope; bound variables appear within quantifier scope</div>
+  <div class="expl"><span class="lbl">Explanation</span>A variable is bound if it falls within the scope of a quantifier (exists or forall). A variable is free if it is not within any quantifier's scope. Only free variables appear in the result.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q5.</span>
+    <span class="badge id">gate-2023-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2023</span>
+    <span class="badge">TRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which of the following TRC expressions finds students who take ALL courses?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>{T | forall C(C in Courses implies exists E(E.student = T.name AND E.course = C.name))}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T | exists C(C in Courses AND forall E(E.student = T.name IMPLIES E.course = C.name))}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | forall C(C in Courses AND exists E(E.student = T.name AND E.course = C.name))}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{T | exists C(C in Courses implies forall E(E.student = T.name AND E.course = C.name))}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) {T | forall C(C in Courses implies exists E(E.student = T.name AND E.course = C.name))}</div>
+  <div class="expl"><span class="lbl">Explanation</span>The correct pattern for &quot;takes all&quot; is: for every course C, there exists an enrollment E linking the student to that course. The forall + implies + exists pattern is the standard translation. Option B has wrong quantifier scope, C uses AND instead of implies, D has wrong quantifier combination.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q6.</span>
+    <span class="badge id">gate-2023-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2023</span>
+    <span class="badge">SQL</span>
+    <span class="badge">easy</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">In SQL, which clause is used to eliminate duplicate rows from the result of a SELECT query?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>UNIQUE</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>DISTINCT</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>DIFFERENT</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SEPARATE</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) DISTINCT</div>
+  <div class="expl"><span class="lbl">Explanation</span>The DISTINCT keyword in the SELECT clause eliminates duplicate rows from the result set. UNIQUE is a constraint, not a query clause.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q7.</span>
+    <span class="badge id">gate-2023-03</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2023</span>
+    <span class="badge">Relational Algebra</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">Which relational algebra operation is NOT directly expressible in relational calculus?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Selection (sigma)</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Projection (pi)</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Cartesian product (cross)</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>Division (÷)</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) Division (÷)</div>
+  <div class="expl"><span class="lbl">Explanation</span>Division is expressible in relational calculus but requires nested negation and is not a primitive operation. While it CAN be expressed, it is the least direct of the listed operations. Selection and projection are directly expressible as conditions and attribute listing in TRC/DRC.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q8.</span>
+    <span class="badge id">gate-extra-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2023</span>
+    <span class="badge">SQL</span>
+    <span class="badge">hard</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">What does the following SQL return?
+SELECT S.name FROM Students S WHERE NOT EXISTS (SELECT * FROM Courses C WHERE NOT EXISTS (SELECT * FROM Enrollment E WHERE E.student = S.name AND E.course = C.name))</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who take at least one course</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students who take all courses</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who take no courses</span></li>
+    <li class="opt"><span class="lt">D)</span><span>All students</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students who take all courses</div>
+  <div class="expl"><span class="lbl">Explanation</span>Double NOT EXISTS: for every course C, there is no enrollment that doesn't exist for student S. This means S has an enrollment for every course — S takes all courses.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q9.</span>
+    <span class="badge id">gate-extra-07</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2023</span>
+    <span class="badge">TRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which of these is an unsafe TRC expression?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>{T | T in Students AND T.age &gt; 20}</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T | T.age &gt; 20 OR T.age &lt;= 20}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | T.name = &quot;Alice&quot; OR T.name != &quot;Alice&quot;}</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>{x | x &gt; 0} where x is a domain variable not linked to any relation</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) {x | x &gt; 0} where x is a domain variable not linked to any relation</div>
+  <div class="expl"><span class="lbl">Explanation</span>An unsafe expression is one where the domain variable x ranges over an infinite domain (all integers &gt; 0) and is not restricted to values appearing in any relation. This could produce an infinite result.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q10.</span>
+    <span class="badge id">gate-2022-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2022</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">Consider:
+{T.name | T in Students AND NOT exists E(E.student = T.name AND E.course = &quot;DBMS&quot;)}
+This returns:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students enrolled in DBMS</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students not enrolled in DBMS</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>All students</span></li>
+    <li class="opt"><span class="lt">D)</span><span>No students</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students not enrolled in DBMS</div>
+  <div class="expl"><span class="lbl">Explanation</span>The NOT EXISTS with the condition means there is no enrollment record for this student in DBMS. This is the standard pattern for &quot;students who do NOT take DBMS&quot;.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q11.</span>
+    <span class="badge id">gate-2022-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2022</span>
+    <span class="badge">DRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">The DRC expression:
+{&lt;s&gt; | forall c(&lt;s, c&gt; in Enrolls implies exists g(&lt;s, c, g&gt; in Grades AND g &gt;= 3.0))}
+expresses:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who have at least one grade above 3.0</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students whose ALL enrolled courses have grade &gt;= 3.0</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students enrolled in courses with grade &gt;= 3.0</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Courses where all students have grade &gt;= 3.0</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students whose ALL enrolled courses have grade &gt;= 3.0</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every enrollment (s, c), there must exist a grade record showing g &gt;= 3.0. This means all of the student's grades are at least 3.0. The forall + implies + exists pattern ensures every enrollment has a qualifying grade.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q12.</span>
+    <span class="badge id">gate-2022-03</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2022</span>
+    <span class="badge">General</span>
+    <span class="badge">easy</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">Relational calculus is:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>A procedural query language</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>A non-procedural (declarative) query language</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>A data definition language</span></li>
+    <li class="opt"><span class="lt">D)</span><span>A data control language</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) A non-procedural (declarative) query language</div>
+  <div class="expl"><span class="lbl">Explanation</span>Relational calculus is declarative (non-procedural) — it specifies WHAT to retrieve without describing HOW. This is the key difference from relational algebra which is procedural.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q13.</span>
+    <span class="badge id">gate-extra-03</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2022</span>
+    <span class="badge">TRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">Which of the following is a correct mapping of &quot;implies&quot; to SQL?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>A → B becomes A AND B</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>A → B becomes NOT A OR B</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>A → B becomes A OR NOT B</span></li>
+    <li class="opt"><span class="lt">D)</span><span>A → B becomes NOT A AND B</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) A → B becomes NOT A OR B</div>
+  <div class="expl"><span class="lbl">Explanation</span>Material implication A → B is logically equivalent to NOT A OR B. This is a fundamental equivalence used when translating TRC/DRC implications to SQL.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q14.</span>
+    <span class="badge id">gate-extra-08</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2022</span>
+    <span class="badge">SQL</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">In SQL, a correlated subquery:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Is executed once before the outer query</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>References columns from the outer query and is re-executed for each outer row</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Cannot use aggregate functions</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Must return exactly one row</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) References columns from the outer query and is re-executed for each outer row</div>
+  <div class="expl"><span class="lbl">Explanation</span>A correlated subquery references columns from the outer query and is re-executed once for each row processed by the outer query. This is different from a non-correlated subquery which is executed once.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q15.</span>
+    <span class="badge id">gate-2021-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2021</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which TRC expression is equivalent to the division operation R(A,B) ÷ S(B)?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>{&lt;a&gt; | forall b(&lt;a, b&gt; in R implies exists s(&lt;s&gt; in S AND b = s))}</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{&lt;a&gt; | exists b(&lt;a, b&gt; in R AND &lt;b&gt; in S)}</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>{&lt;a&gt; | forall b(&lt;b&gt; in S implies exists r(&lt;a, b&gt; in R))}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{&lt;a&gt; | exists b(&lt;b&gt; in S AND &lt;a, b&gt; in R)}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) {&lt;a&gt; | forall b(&lt;b&gt; in S implies exists r(&lt;a, b&gt; in R))}</div>
+  <div class="expl"><span class="lbl">Explanation</span>Division R÷S returns tuples from R that are associated with ALL tuples in S. The TRC pattern is: for every b in S, there exists a tuple (a,b) in R. This is the standard translation of division to TRC.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q16.</span>
+    <span class="badge id">gate-2021-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2021</span>
+    <span class="badge">SQL</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">What is the result of the following SQL query?
+SELECT COUNT(DISTINCT student) FROM Enrollment WHERE grade = &quot;A&quot;</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Total number of A grades</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Number of students who have at least one A grade</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Number of courses with A grade</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Total enrollment count</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Number of students who have at least one A grade</div>
+  <div class="expl"><span class="lbl">Explanation</span>COUNT(DISTINCT student) counts unique students. The WHERE clause filters for A grades. So it counts how many distinct students have at least one A grade.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q17.</span>
+    <span class="badge id">gate-extra-04</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2021</span>
+    <span class="badge">DRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">The DRC expression:
+{&lt;s&gt; | exists c1(&lt;s, c1&gt; in Enrolls AND forall c2(&lt;s, c2&gt; in Enrolls IMPLIES c2 = c1))}
+expresses students who:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Take at least one course</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Take exactly one course</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Take all courses</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Take no courses</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Take exactly one course</div>
+  <div class="expl"><span class="lbl">Explanation</span>There exists a course c1 that s is enrolled in, and for every enrollment c2 of s, c2 must equal c1. This means s is enrolled in exactly one course.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q18.</span>
+    <span class="badge id">gate-extra-09</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2021</span>
+    <span class="badge">Relational Algebra</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">The expression π_A(R) - π_A(R - π_{A,B}(R)) computes:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All values of A in R</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Values of A that are associated with all values of B</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Values of A that have a NULL in B</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Values of A that appear exactly once</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Values of A that are associated with all values of B</div>
+  <div class="expl"><span class="lbl">Explanation</span>This is the division operation expressed using projection and set difference. It returns values of A that are associated with ALL values of B in R.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q19.</span>
+    <span class="badge id">gate-2020-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2020</span>
+    <span class="badge">TRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which of the following queries CANNOT be expressed in first-order relational calculus?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Find all students with GPA &gt; 3.0</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Find students who take all courses</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>Find the transitive closure (ancestors in a family tree)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Find pairs of students who share a course</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) Find the transitive closure (ancestors in a family tree)</div>
+  <div class="expl"><span class="lbl">Explanation</span>Transitive closure requires recursion (repeated application of a relation), which is beyond the expressive power of first-order logic. All other options involve quantifiers and conditions that are expressible in TRC/DRC.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q20.</span>
+    <span class="badge id">gate-2020-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2020</span>
+    <span class="badge">DRC</span>
+    <span class="badge">easy</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">In DRC, variables range over:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Tuples (rows) of relations</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Domain values (individual column values)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Entire relations (tables)</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Database schemas</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Domain values (individual column values)</div>
+  <div class="expl"><span class="lbl">Explanation</span>In Domain Relational Calculus, variables range over domain values (individual column values), unlike TRC where variables range over tuples (rows).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q21.</span>
+    <span class="badge id">gate-extra-05</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2020</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which TRC expression finds students who share at least one course with &quot;Bob&quot;?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>{T | T in Students AND exists E1(E1.student = T.name AND exists E2(E2.student = &quot;Bob&quot; AND E1.course = E2.course))}</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T | T in Students AND exists E(E.student = &quot;Bob&quot; AND E.course IN (SELECT course FROM Enrollment WHERE student = T.name))}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | T in Students AND exists E(E.student = T.name AND E.course = &quot;DBMS&quot;)}</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>Both A and B are correct</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) Both A and B are correct</div>
+  <div class="expl"><span class="lbl">Explanation</span>Both A and B express the same thing: there exists a course that both T and Bob are enrolled in. A uses nested exists, B uses a subquery with IN.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q22.</span>
+    <span class="badge id">gate-extra-10</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2020</span>
+    <span class="badge">DRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">The DRC expression:
+{&lt;s&gt; | not exists c(&lt;s, c&gt; in Enrolls AND forall c2(&lt;s, c2&gt; in Enrolls IMPLIES c2 = c))}
+expresses students who:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Take exactly one course</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Take zero or two or more courses</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Take no courses</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Take at least two courses</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Take zero or two or more courses</div>
+  <div class="expl"><span class="lbl">Explanation</span>The inner part says &quot;s is enrolled in exactly one course&quot; (there exists c and all enrollments equal c). The outer negation says it is NOT the case, so s takes either zero or two or more courses.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q23.</span>
+    <span class="badge id">gate-2019-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2019</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">Consider the TRC expression:
+{T | T in Students AND forall S(S in Students implies T.gpa &gt;= S.gpa)}
+This expression returns:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students with the highest GPA</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students with GPA above average</span></li>
+    <li class="opt"><span class="lt">D)</span><span>No students (empty result)</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students with the highest GPA</div>
+  <div class="expl"><span class="lbl">Explanation</span>The expression says: T is a student such that for ALL other students S, T's GPA is &gt;= S's GPA. This means T has the maximum GPA in the Students relation.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q24.</span>
+    <span class="badge id">gate-2019-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2019</span>
+    <span class="badge">General</span>
+    <span class="badge">easy</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">Codd's theorem states that:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Relational calculus is faster than SQL</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Relational calculus and relational algebra have the same expressive power</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Relational calculus cannot handle NULLs</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Relational algebra is more powerful than relational calculus</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Relational calculus and relational algebra have the same expressive power</div>
+  <div class="expl"><span class="lbl">Explanation</span>Codd's theorem states that relational calculus and relational algebra are equivalent in expressive power — any query expressible in one can be expressed in the other.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q25.</span>
+    <span class="badge id">gate-2018-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2018</span>
+    <span class="badge">TRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">What is wrong with: {T | T in Students AND T.age &gt; 20 AND T.age &lt; 18}?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Nothing, it returns students between 18 and 20</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>The conditions are contradictory, so it always returns empty</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>It is a syntax error</span></li>
+    <li class="opt"><span class="lt">D)</span><span>It returns all students</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) The conditions are contradictory, so it always returns empty</div>
+  <div class="expl"><span class="lbl">Explanation</span>No student can simultaneously have age &gt; 20 AND age &lt; 18. These are contradictory conditions, so the result is always an empty relation regardless of the database contents.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q26.</span>
+    <span class="badge id">gate-2018-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2018</span>
+    <span class="badge">SQL</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">Which SQL construct is used to express the universal quantifier (forall) from TRC?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Using the ALL keyword directly</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Using NOT EXISTS with a negated condition</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Using a GROUP BY clause</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Using the HAVING clause</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Using NOT EXISTS with a negated condition</div>
+  <div class="expl"><span class="lbl">Explanation</span>SQL does not have a direct &quot;forall&quot; construct. The standard translation is: forall X: P(X) becomes NOT EXISTS X: NOT P(X). This double negation pattern is the standard approach.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q27.</span>
+    <span class="badge id">gate-2017-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2017</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">Consider:
+{T.name | T in Students AND exists E1(E1.student = T.name AND E1.course = &quot;DBMS&quot;) AND exists E2(E2.student = T.name AND E2.course = &quot;OS&quot;)}
+This returns students who:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Take DBMS or OS</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Take both DBMS and OS</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Take DBMS but not OS</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Take neither DBMS nor OS</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Take both DBMS and OS</div>
+  <div class="expl"><span class="lbl">Explanation</span>Two separate existential quantifiers check that the student is enrolled in DBMS AND also enrolled in OS. Both conditions must hold, so the student takes both courses.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q28.</span>
+    <span class="badge id">gate-2017-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2017</span>
+    <span class="badge">Relational Algebra</span>
+    <span class="badge">easy</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">The number of basic relational algebra operations is:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>4</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>5</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>6</span></li>
+    <li class="opt"><span class="lt">D)</span><span>8</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) 5</div>
+  <div class="expl"><span class="lbl">Explanation</span>The 5 basic relational algebra operations are: Selection (sigma), Projection (pi), Cartesian Product (cross), Union, and Set Difference. All other operations (intersection, join, division) can be expressed using these 5.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q29.</span>
+    <span class="badge id">gate-2016-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2016</span>
+    <span class="badge">TRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which TRC expression finds students who do NOT take any course taken by student &quot;Alice&quot;?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>{T | T in Students AND T.name != &quot;Alice&quot; AND not exists E(E.student = T.name AND exists A(A.student = &quot;Alice&quot; AND A.course = E.course))}</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T | T in Students AND not exists E(E.student = T.name AND E.course IN (SELECT course FROM Enrollment WHERE student = &quot;Alice&quot;))}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | T in Students AND not exists E(E.student = &quot;Alice&quot; AND E.student = T.name)}</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>Both A and B are correct</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) Both A and B are correct</div>
+  <div class="expl"><span class="lbl">Explanation</span>Both A and B express the same thing: find students such that there is no enrollment for them in any course that Alice takes. A uses nested exists, B uses a subquery with IN. Both are valid TRC expressions (B uses a SQL-like subquery which some TRC formalisms allow).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q30.</span>
+    <span class="badge id">gate-2016-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2016</span>
+    <span class="badge">DRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">The DRC expression {&lt;n, a&gt; | &lt;n, a, d&gt; in Students AND d = &quot;CS&quot;} returns:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All attributes of CS students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Name and age of CS students</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Only names of CS students</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Only ages of CS students</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Name and age of CS students</div>
+  <div class="expl"><span class="lbl">Explanation</span>The result tuple &lt;n, a&gt; specifies two domain variables (name and age). The condition filters for CS department. So it returns name and age pairs for CS students.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q31.</span>
+    <span class="badge id">gate-2015-01</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2015</span>
+    <span class="badge">General</span>
+    <span class="badge">easy</span>
+    <span class="badge">1 mark</span>
+  </div>
+  <div class="qtext">Which of the following is NOT a valid logical operator in relational calculus?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>and</span></li>
+    <li class="opt"><span class="lt">B)</span><span>or</span></li>
+    <li class="opt"><span class="lt">C)</span><span>not</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>xor</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) xor</div>
+  <div class="expl"><span class="lbl">Explanation</span>Standard relational calculus uses and, or, not, and implication. XOR is not a primitive operator, though it can be expressed using the others (A xor B = (A or B) and not (A and B)).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q32.</span>
+    <span class="badge id">gate-2015-02</span>
+    <span class="badge solid">GATE</span>
+    <span class="badge">2015</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Consider:
+{T | forall C(C in Courses implies (exists E(T.name = E.student AND E.course = C.name) implies T.gpa &gt; 3.0))}
+This means:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who take all courses and have GPA &gt; 3.0</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students who, for every course they take, have GPA &gt; 3.0</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who take at least one course with GPA &gt; 3.0</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students with GPA &gt; 3.0</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students who, for every course they take, have GPA &gt; 3.0</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every course C, if the student takes course C (exists E linking them), then their GPA must be &gt; 3.0. This means for every course the student is enrolled in, their GPA condition holds. Students who take no courses satisfy this vacuously.</div>
+</article>
+<h2>UGC NET &mdash; 8 questions</h2>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q33.</span>
+    <span class="badge id">ugc-2024-01</span>
+    <span class="badge solid">UGC NET</span>
+    <span class="badge">2024</span>
+    <span class="badge">TRC</span>
+    <span class="badge">easy</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">In Tuple Relational Calculus (TRC), the variables range over:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Domain values</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Tuples (rows) of relations</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Entire relations</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Attributes only</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Tuples (rows) of relations</div>
+  <div class="expl"><span class="lbl">Explanation</span>In TRC, tuple variables range over tuples (rows) of relations. Each tuple variable represents an entire row, unlike DRC where variables range over domain values.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q34.</span>
+    <span class="badge id">ugc-2024-02</span>
+    <span class="badge solid">UGC NET</span>
+    <span class="badge">2024</span>
+    <span class="badge">SQL</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which of the following is used to find tuples that match a pattern in SQL?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>LIKE operator</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>MATCH operator</span></li>
+    <li class="opt"><span class="lt">C)</span><span>FIND operator</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SEARCH operator</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) LIKE operator</div>
+  <div class="expl"><span class="lbl">Explanation</span>The LIKE operator in SQL is used for pattern matching in string values. It uses wildcards % (any sequence) and _ (single character).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q35.</span>
+    <span class="badge id">ugc-2023-01</span>
+    <span class="badge solid">UGC NET</span>
+    <span class="badge">2023</span>
+    <span class="badge">Relational Algebra</span>
+    <span class="badge">easy</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">The operation that combines tuples from two relations without any condition is:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Join</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Cartesian Product</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Union</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Intersection</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Cartesian Product</div>
+  <div class="expl"><span class="lbl">Explanation</span>Cartesian Product (cross join) combines every tuple from one relation with every tuple from another relation, without any condition. Join is a filtered version of Cartesian Product.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q36.</span>
+    <span class="badge id">ugc-2023-02</span>
+    <span class="badge solid">UGC NET</span>
+    <span class="badge">2023</span>
+    <span class="badge">DRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">In DRC, the existential quantifier &quot;exists&quot; quantifies over:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Tuple variables</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Domain variables</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Relations</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Attributes</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Domain variables</div>
+  <div class="expl"><span class="lbl">Explanation</span>In DRC, the existential quantifier &quot;exists&quot; quantifies over domain variables (individual values), not tuples. For example, exists x means &quot;there exists some domain value x.&quot;</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q37.</span>
+    <span class="badge id">ugc-2022-01</span>
+    <span class="badge solid">UGC NET</span>
+    <span class="badge">2022</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">The TRC expression {T | T in Students AND T.age &gt; 20} is equivalent to which SQL?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>SELECT * FROM Students WHERE age &gt; 20</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>SELECT age FROM Students WHERE age &gt; 20</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT * FROM Students HAVING age &gt; 20</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT * FROM Students GROUP BY age HAVING age &gt; 20</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) SELECT * FROM Students WHERE age &gt; 20</div>
+  <div class="expl"><span class="lbl">Explanation</span>The TRC expression selects all attributes (*) of tuples in Students where age &gt; 20. This directly maps to SELECT * FROM Students WHERE age &gt; 20.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q38.</span>
+    <span class="badge id">ugc-2022-02</span>
+    <span class="badge solid">UGC NET</span>
+    <span class="badge">2022</span>
+    <span class="badge">General</span>
+    <span class="badge">easy</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Who proposed the relational model?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Peter Chen</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>E.F. Codd</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>James Martin</span></li>
+    <li class="opt"><span class="lt">D)</span><span>C.J. Date</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) E.F. Codd</div>
+  <div class="expl"><span class="lbl">Explanation</span>E.F. Codd proposed the relational model in 1970 in his seminal paper &quot;A Relational Model of Data for Large Shared Data Banks.&quot;</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q39.</span>
+    <span class="badge id">ugc-2021-01</span>
+    <span class="badge solid">UGC NET</span>
+    <span class="badge">2021</span>
+    <span class="badge">TRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which TRC expression is NOT safe?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>{T | T in Students AND T.age &gt; 20}</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T | T.name = &quot;Bob&quot; OR T.name != &quot;Bob&quot;}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | T.age &gt; 20 OR T.age &lt;= 20}</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>{x | x &gt; 0} where x is not linked to any relation</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) {x | x &gt; 0} where x is not linked to any relation</div>
+  <div class="expl"><span class="lbl">Explanation</span>An unsafe expression is one where the domain variable x ranges over an infinite domain (all integers &gt; 0) and is not restricted to values appearing in any relation. This could produce an infinite result.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q40.</span>
+    <span class="badge id">ugc-2021-02</span>
+    <span class="badge solid">UGC NET</span>
+    <span class="badge">2021</span>
+    <span class="badge">SQL</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">The SQL query &quot;SELECT * FROM Students WHERE EXISTS (SELECT * FROM Enrollment WHERE Enrollment.student = Students.name)&quot; returns:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Only students who have at least one enrollment</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Only students with no enrollment</span></li>
+    <li class="opt"><span class="lt">D)</span><span>All enrollment records</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Only students who have at least one enrollment</div>
+  <div class="expl"><span class="lbl">Explanation</span>The EXISTS subquery checks if there is at least one matching enrollment record for each student. Only students with at least one enrollment satisfy the condition.</div>
+</article>
+<h2>ISRO &mdash; 6 questions</h2>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q41.</span>
+    <span class="badge id">isro-2024-01</span>
+    <span class="badge solid">ISRO</span>
+    <span class="badge">2024</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">The TRC expression:
+{T.name | T in Students AND exists E(E.student = T.name AND E.course = &quot;Networks&quot;)}
+is equivalent to:</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>SELECT name FROM Students WHERE name IN (SELECT student FROM Enrollment WHERE course = &quot;Networks&quot;)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>SELECT name FROM Students WHERE course = &quot;Networks&quot;</span></li>
+    <li class="opt"><span class="lt">C)</span><span>SELECT course FROM Enrollment WHERE course = &quot;Networks&quot;</span></li>
+    <li class="opt"><span class="lt">D)</span><span>SELECT * FROM Students, Enrollment</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) SELECT name FROM Students WHERE name IN (SELECT student FROM Enrollment WHERE course = &quot;Networks&quot;)</div>
+  <div class="expl"><span class="lbl">Explanation</span>The existential quantifier with the join condition maps to a subquery with IN. The query finds students enrolled in Networks course.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q42.</span>
+    <span class="badge id">isro-2024-02</span>
+    <span class="badge solid">ISRO</span>
+    <span class="badge">2024</span>
+    <span class="badge">General</span>
+    <span class="badge">easy</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which of the following is a DDL command?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>SELECT</span></li>
+    <li class="opt"><span class="lt">B)</span><span>INSERT</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>CREATE</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>UPDATE</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) CREATE</div>
+  <div class="expl"><span class="lbl">Explanation</span>CREATE is a Data Definition Language (DDL) command used to create database objects. SELECT, INSERT, and UPDATE are DML (Data Manipulation Language) commands.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q43.</span>
+    <span class="badge id">isro-2023-01</span>
+    <span class="badge solid">ISRO</span>
+    <span class="badge">2023</span>
+    <span class="badge">TRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which of the following expresses &quot;students who take ALL courses offered by their department&quot; in TRC?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>{T | forall C(C.dept = T.dept implies exists E(E.student = T.name AND E.course = C.name))}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T | exists C(C.dept = T.dept AND exists E(E.student = T.name AND E.course = C.name))}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | forall C(C.dept = T.dept AND exists E(E.student = T.name))}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{T | exists C(C.dept = T.dept implies forall E(E.student = T.name))}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) {T | forall C(C.dept = T.dept implies exists E(E.student = T.name AND E.course = C.name))}</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every course C in T's department, there must exist an enrollment E linking T to C. The forall + implies + exists pattern with the department matching condition is correct.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q44.</span>
+    <span class="badge id">isro-2023-02</span>
+    <span class="badge solid">ISRO</span>
+    <span class="badge">2023</span>
+    <span class="badge">SQL</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">What does the following SQL return?
+SELECT student FROM Enrollment E1 WHERE NOT EXISTS (SELECT * FROM Enrollment E2 WHERE E2.student = E1.student AND E2.course != E1.course)</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students who take more than one course</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students who take exactly one course</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who take no courses</span></li>
+    <li class="opt"><span class="lt">D)</span><span>All students</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students who take exactly one course</div>
+  <div class="expl"><span class="lbl">Explanation</span>For student E1, there is no other enrollment E2 with the same student but different course. This means all of E1's enrollments are for the same course — i.e., exactly one course.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q45.</span>
+    <span class="badge id">isro-2022-01</span>
+    <span class="badge solid">ISRO</span>
+    <span class="badge">2022</span>
+    <span class="badge">TRC</span>
+    <span class="badge">easy</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">In TRC, the symbol &quot;|&quot; (pipe) separates:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Two conditions</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>The result pattern from the condition</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>The SELECT clause from the FROM clause</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Two relations</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) The result pattern from the condition</div>
+  <div class="expl"><span class="lbl">Explanation</span>In TRC syntax {tuple_pattern | condition}, the vertical bar separates the tuple pattern (what to return) from the condition (filtering criteria).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q46.</span>
+    <span class="badge id">isro-2022-02</span>
+    <span class="badge solid">ISRO</span>
+    <span class="badge">2022</span>
+    <span class="badge">DRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">The DRC expression {&lt;s, g&gt; | exists c(&lt;s, c, g&gt; in Grades AND g = &quot;A&quot;)} returns:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All grades for all students</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Student-grade pairs where the grade is A</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>All courses with grade A</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Students who got an A in some course</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Student-grade pairs where the grade is A</div>
+  <div class="expl"><span class="lbl">Explanation</span>The result &lt;s, g&gt; projects student and grade. The condition filters for grade = &quot;A&quot;. This returns pairs of students and their A grades.</div>
+</article>
+<h2>BARC &mdash; 4 questions</h2>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q47.</span>
+    <span class="badge id">barc-2024-01</span>
+    <span class="badge solid">BARC</span>
+    <span class="badge">2024</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which of the following is the correct SQL equivalent of the universal quantifier in TRC?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>EXISTS (SELECT * FROM R WHERE NOT P)</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>NOT EXISTS (SELECT * FROM R WHERE NOT P)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>ALL (SELECT * FROM R WHERE P)</span></li>
+    <li class="opt"><span class="lt">D)</span><span>ANY (SELECT * FROM R WHERE P)</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) NOT EXISTS (SELECT * FROM R WHERE NOT P)</div>
+  <div class="expl"><span class="lbl">Explanation</span>The universal quantifier forall X: P(X) translates to NOT EXISTS X: NOT P(X). This double negation pattern is the standard SQL translation.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q48.</span>
+    <span class="badge id">barc-2023-01</span>
+    <span class="badge solid">BARC</span>
+    <span class="badge">2023</span>
+    <span class="badge">General</span>
+    <span class="badge">easy</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which normal form removes transitive dependencies?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>First Normal Form (1NF)</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Second Normal Form (2NF)</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>Third Normal Form (3NF)</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>BCNF</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) Third Normal Form (3NF)</div>
+  <div class="expl"><span class="lbl">Explanation</span>Third Normal Form (3NF) removes transitive dependencies. A relation is in 3NF if it is in 2NF and no non-prime attribute is transitively dependent on any candidate key.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q49.</span>
+    <span class="badge id">barc-2023-02</span>
+    <span class="badge solid">BARC</span>
+    <span class="badge">2023</span>
+    <span class="badge">TRC</span>
+    <span class="badge">hard</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Consider:
+{T | T in Students AND forall S(S in Students IMPLIES (T.dept = S.dept OR T.gpa &gt;= S.gpa))}
+This returns:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Students with the highest GPA overall</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Students who either have the highest GPA in their department or the highest GPA overall</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Students who share a department with someone or have higher GPA</span></li>
+    <li class="opt"><span class="lt">D)</span><span>All students</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Students who either have the highest GPA in their department or the highest GPA overall</div>
+  <div class="expl"><span class="lbl">Explanation</span>For every other student S, either T is in the same department as S, or T has a higher GPA than S. This means T either has the highest GPA in their department (same dept students) or has higher GPA than everyone in other departments.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q50.</span>
+    <span class="badge id">barc-2022-01</span>
+    <span class="badge solid">BARC</span>
+    <span class="badge">2022</span>
+    <span class="badge">SQL</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which SQL clause can reference aggregate functions?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>WHERE</span></li>
+    <li class="opt"><span class="lt">B)</span><span>GROUP BY</span></li>
+    <li class="opt correct"><span class="lt">C)</span><span>HAVING</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">D)</span><span>ORDER BY</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: C) HAVING</div>
+  <div class="expl"><span class="lbl">Explanation</span>The HAVING clause can reference aggregate functions because it is evaluated after GROUP BY. WHERE cannot use aggregate functions because it is evaluated before grouping.</div>
+</article>
+<h2>IES &mdash; 5 questions</h2>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q51.</span>
+    <span class="badge id">ies-2024-01</span>
+    <span class="badge solid">IES</span>
+    <span class="badge">2024</span>
+    <span class="badge">TRC</span>
+    <span class="badge">easy</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">What does the TRC expression {T | T in Students} return?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>All tuples in the Students relation</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>All attribute names of Students</span></li>
+    <li class="opt"><span class="lt">C)</span><span>The count of tuples in Students</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Only the first tuple in Students</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) All tuples in the Students relation</div>
+  <div class="expl"><span class="lbl">Explanation</span>The expression with no additional conditions selects every tuple in the Students relation, equivalent to SELECT * FROM Students.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q52.</span>
+    <span class="badge id">ies-2024-02</span>
+    <span class="badge solid">IES</span>
+    <span class="badge">2024</span>
+    <span class="badge">DRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">The DRC expression {&lt;n&gt; | &lt;n, a, d&gt; in Students AND a &gt; 20 AND d = &quot;CS&quot;} returns:</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>All attributes of CS students older than 20</span></li>
+    <li class="opt correct"><span class="lt">B)</span><span>Names of CS students older than 20</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Ages of CS students older than 20</span></li>
+    <li class="opt"><span class="lt">D)</span><span>Departments of students older than 20</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: B) Names of CS students older than 20</div>
+  <div class="expl"><span class="lbl">Explanation</span>The result tuple &lt;n&gt; projects only the name. The conditions filter for age &gt; 20 and dept = &quot;CS&quot;. So it returns names of CS students older than 20.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q53.</span>
+    <span class="badge id">ies-2023-01</span>
+    <span class="badge solid">IES</span>
+    <span class="badge">2023</span>
+    <span class="badge">TRC</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which TRC expression finds students who are NOT the oldest?</div>
+  <ul class="options">
+    <li class="opt correct"><span class="lt">A)</span><span>{T | T in Students AND exists S(S in Students AND S.age &gt; T.age)}</span><span class="tick">Correct</span></li>
+    <li class="opt"><span class="lt">B)</span><span>{T | T in Students AND forall S(S in Students AND S.age &lt;= T.age)}</span></li>
+    <li class="opt"><span class="lt">C)</span><span>{T | T in Students AND not exists S(S in Students AND S.age &gt; T.age)}</span></li>
+    <li class="opt"><span class="lt">D)</span><span>{T | T in Students AND S.age &gt; T.age}</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: A) {T | T in Students AND exists S(S in Students AND S.age &gt; T.age)}</div>
+  <div class="expl"><span class="lbl">Explanation</span>There exists another student S who is older than T. This means T is not the oldest student. Option C finds students who ARE the oldest (no one older).</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q54.</span>
+    <span class="badge id">ies-2023-02</span>
+    <span class="badge solid">IES</span>
+    <span class="badge">2023</span>
+    <span class="badge">Relational Algebra</span>
+    <span class="badge">easy</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which operation removes duplicates from a relation?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Union</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Set Difference</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Projection</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>All of the above</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) All of the above</div>
+  <div class="expl"><span class="lbl">Explanation</span>All these operations use set semantics, which means they automatically remove duplicates. In relational algebra, relations are sets, not multisets.</div>
+</article>
+<article class="card">
+  <div class="card-head">
+    <span class="qnum">Q55.</span>
+    <span class="badge id">ies-2022-01</span>
+    <span class="badge solid">IES</span>
+    <span class="badge">2022</span>
+    <span class="badge">General</span>
+    <span class="badge">medium</span>
+    <span class="badge">2 marks</span>
+  </div>
+  <div class="qtext">Which of the following is NOT a property of a transaction in a database system?</div>
+  <ul class="options">
+    <li class="opt"><span class="lt">A)</span><span>Atomicity</span></li>
+    <li class="opt"><span class="lt">B)</span><span>Consistency</span></li>
+    <li class="opt"><span class="lt">C)</span><span>Durability</span></li>
+    <li class="opt correct"><span class="lt">D)</span><span>Redundancy</span><span class="tick">Correct</span></li>
+  </ul>
+  <div class="answer-line">Correct answer: D) Redundancy</div>
+  <div class="expl"><span class="lbl">Explanation</span>The ACID properties of transactions are Atomicity, Consistency, Isolation, and Durability. Redundancy is not a property of transactions — it is actually something databases try to minimize through normalization.</div>
+</article>
+<div class="foot">Generated 2026-10-27 from the Tuple &amp; Domain Relational Calculus Translator source. 55 questions.</div>
+</div>
+</body>
+</html>
